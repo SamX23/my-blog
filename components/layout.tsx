@@ -1,8 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
-import Link from "next/link";
+import Footer from "./footer";
 
 const name = "Sami Kalammallah";
 export const siteTitle = "Sami Kalammallah";
@@ -20,7 +21,7 @@ export default function Layout({
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
+          content="Sami Kalammallah blog about his front end journey"
         />
         <meta
           property="og:image"
@@ -74,6 +75,8 @@ export default function Layout({
           </Link>
         </div>
       )}
+
+      <Footer />
     </div>
   );
 }
