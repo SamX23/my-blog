@@ -1,6 +1,6 @@
 import { getSortedPostsData } from "../lib/posts";
 import Date from "../components/date";
-import Layout from "../components/layout";
+import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import Head from "next/head";
@@ -15,12 +15,12 @@ export default function Blog({
     id: string;
   }[];
 }) {
-  const siteTitle = "Sami's blog";
+  const blogTitle = `The digital writing of Sami | ${siteTitle}`;
 
   return (
     <Layout>
       <Head>
-        <title>{siteTitle}</title>
+        <title>{blogTitle}</title>
       </Head>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
