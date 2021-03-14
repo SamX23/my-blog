@@ -1,17 +1,18 @@
-import Head from 'next/head'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "./layout.module.css";
+import utilStyles from "../styles/utils.module.css";
+import Link from "next/link";
 
-const name = 'Sami Kalammallah'
-export const siteTitle = 'Sami - Blog to be'
+const name = "Sami Kalammallah";
+export const siteTitle = "Sami - Blog to be";
 
 export default function Layout({
   children,
-  home
+  home,
 }: {
-  children: React.ReactNode
-  home?: boolean
+  children: React.ReactNode;
+  home?: boolean;
 }) {
   return (
     <div className={styles.container}>
@@ -19,11 +20,11 @@ export default function Layout({
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="A journey of a front end development"
+          content="Learn how to build a personal website using Next.js"
         />
         <meta
           property="og:image"
-          content={`https://og-image.now.sh/${encodeURI(
+          content={`https://og-image.vercel.app/${encodeURI(
             siteTitle
           )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
         />
@@ -33,9 +34,12 @@ export default function Layout({
       <header className={styles.header}>
         {home ? (
           <>
-            <img
+            <Image
+              priority
               src="/images/profile.jpg"
-              className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
+              className={utilStyles.borderCircle}
+              height={144}
+              width={144}
               alt={name}
             />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
@@ -44,9 +48,12 @@ export default function Layout({
           <>
             <Link href="/">
               <a>
-                <img
+                <Image
+                  priority
                   src="/images/profile.jpg"
-                  className={`${styles.headerImage} ${utilStyles.borderCircle}`}
+                  className={utilStyles.borderCircle}
+                  height={108}
+                  width={108}
                   alt={name}
                 />
               </a>
@@ -68,5 +75,5 @@ export default function Layout({
         </div>
       )}
     </div>
-  )
+  );
 }
