@@ -1,7 +1,6 @@
 import Head from "next/head";
-import Hero from "../components/hero";
-import Layout, { siteTitle } from "../components/layout";
-import Navigation from "../components/navigation";
+import Layout, { siteTitle } from "../src/components/layout";
+import Navigation from "../src/components/navigation";
 import utilStyles from "../styles/utils.module.css";
 
 export default function Home() {
