@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import hero from "../styles/hero.module.css";
-import utilStyles from "../styles/utils.module.css";
+import hero from "../../styles/hero.module.css";
+import utilStyles from "../../styles/utils.module.css";
 
 export default function Hero({ home, name }: { home?: boolean; name: string }) {
   return (
