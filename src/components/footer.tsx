@@ -1,24 +1,26 @@
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
+import { socialMedia } from "../mock/data";
 
 const useStyles = makeStyles({
   root: {
     margin: "1em 0",
   },
   footer_Bar: {
-    borderTop: "0.2em solid #e9e0ff",
+    borderTop: "0.1em solid #272341",
     paddingTop: "1em",
   },
   footer_text: {},
   footer_sosmed: {
-    "> a": {
-      marginRight: ".5em",
+    "& a": {
+      marginLeft: ".5em",
     },
   },
 });
 
 export default function Footer() {
   const classes = useStyles();
+
   return (
     <footer className={classes.root}>
       <Grid
@@ -37,9 +39,11 @@ export default function Footer() {
         </Grid>
 
         <Grid item className={classes.footer_sosmed}>
-          <a href="https://web.facebook.com/SamiKalamallah">Facebook</a>
-          <a href="https://web.facebook.com/SamiKalamallah">Instagram</a>
-          <a href="https://web.facebook.com/SamiKalamallah">WhatsApp</a>
+          {socialMedia.networks.map((item) => (
+            <a key={item.id} href={item.url}>
+              {item.name}
+            </a>
+          ))}
         </Grid>
       </Grid>
     </footer>
