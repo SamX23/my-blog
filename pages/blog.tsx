@@ -1,9 +1,9 @@
 import Link from "next/link";
-import Head from "next/head";
 import { GetStaticProps } from "next";
 import { getSortedPostsData } from "../src/components/lib/posts";
 import Date from "../src/components/date";
-import Layout, { siteTitle } from "../src/components/layout";
+import Layout from "../src/components/layout";
+import { defaultTitle } from "../src/mock/data";
 import utilStyles from "../styles/utils.module.css";
 
 export default function Blog({
@@ -15,13 +15,10 @@ export default function Blog({
     id: string;
   }[];
 }) {
-  const blogTitle = `The digital writing of Sami | ${siteTitle}`;
+  const blogTitle = `The digital writing of Sami | ${defaultTitle}`;
 
   return (
-    <Layout>
-      <Head>
-        <title>{blogTitle}</title>
-      </Head>
+    <Layout siteTitle={blogTitle}>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
