@@ -1,14 +1,10 @@
-import Head from "next/head";
-import Layout, { siteTitle } from "../src/components/layout";
+import Layout from "../src/components/layout";
 import Navigation from "../src/components/navigation";
 import utilStyles from "../styles/utils.module.css";
 
 export default function Home() {
   return (
     <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
       <Navigation />
       <section className={utilStyles.headingMd}>
         <p>
