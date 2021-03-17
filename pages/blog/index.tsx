@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { GetStaticProps } from "next";
-import { getSortedPostsData } from "../src/components/lib/posts";
-import Date from "../src/components/date";
-import Layout from "../src/components/layout";
-import { defaultTitle } from "../src/mock/data";
-import utilStyles from "../styles/utils.module.css";
+import { getSortedPostsData } from "../../src/components/lib/posts";
+import Date from "../../src/components/date";
+import Layout from "../../src/components/layout";
+import { defaultTitle } from "../../src/mock/data";
+import utilStyles from "../../styles/utils.module.css";
 
 export default function Blog({
   allPostsData,
@@ -24,7 +24,7 @@ export default function Blog({
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>
+              <Link href={`/blog/${id}`}>
                 <a>{title}</a>
               </Link>
               <br />

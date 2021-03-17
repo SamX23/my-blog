@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { GetStaticProps, GetStaticPaths } from "next";
 import Layout from "../../src/components/layout";
 import { getAllPostIds, getPostData } from "../../src/components/lib/posts";
@@ -15,10 +14,7 @@ export default function Post({
   };
 }) {
   return (
-    <Layout>
-      <Head>
-        <title>{postData.title}</title>
-      </Head>
+    <Layout siteTitle={postData.title}>
       <article>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
         <div className={utilStyles.lightText}>
