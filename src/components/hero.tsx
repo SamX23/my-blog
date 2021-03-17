@@ -10,7 +10,7 @@ export default function Hero({ home, name }: { home?: boolean; name: string }) {
         <div className={hero.hero}>
           <div className={hero.hero__container}>
             <h1>
-              Yo! I&apos;m Sami a highly motivated self-taugh Front-End Web
+              Yo! I&apos;m {name} a highly motivated self-taugh Front-End Web
               Developer. 😎
             </h1>
           </div>
