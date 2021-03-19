@@ -1,5 +1,6 @@
 import { AppProps } from "next/app";
 import { useEffect } from "react";
+import { ThemeProvider } from "../src/theme/themeProvider";
 import "../styles/global.css";
 
 function App({ Component, pageProps }: AppProps) {
@@ -10,7 +11,11 @@ function App({ Component, pageProps }: AppProps) {
     }
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <ThemeProvider>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 }
 
 export default App;
