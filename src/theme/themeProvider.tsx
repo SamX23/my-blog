@@ -52,7 +52,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
     <ToggleThemeContext.Provider
       value={{
         toggleTheme,
-        isDark: !(selectedTheme.themeName === "lightTheme"),
+        isDark: !(selectedTheme.themeName === "darkTheme"),
       }}
     >
       <MuiThemeProvider theme={selectedTheme.appliedTheme}>

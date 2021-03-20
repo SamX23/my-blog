@@ -3,9 +3,11 @@ import { red } from "@material-ui/core/colors";
 
 export const darkColorPalette = {
   primary: "rgb(0,0,0)",
+  text: "rgb(255,255,255)",
 };
 export const lightColorPalette = {
   primary: "rgb(255,255,255)",
+  text: "rgb(0,0,0)",
 };
 
 const options = (dark: boolean): ThemeOptions => {
@@ -37,6 +39,6 @@ const theme = createMuiTheme({
   },
 });
 
-export const darkTheme = createMuiTheme(options(true));
+export const darkTheme = createMuiTheme(options(false));
 export const lightTheme = createMuiTheme(options(false));
 export default theme;
