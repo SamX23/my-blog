@@ -9,6 +9,7 @@ import { ToggleThemeContext } from "../theme/themeProvider";
 
 export default function Navigation() {
   const { toggleTheme, isDark } = useContext(ToggleThemeContext);
+  console.log("Dark Mode ? ", isDark);
 
   return (
     <nav className={navigation.nav__Bar}>
