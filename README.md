@@ -4,14 +4,14 @@ Hi, I challenge myself to create a website using most updated techstack and rigi
 
 ### To do
 
+- React Context
+- Theming switch for dark and light
 - PWA
 - Shows up on google !
 - Github API
 - Animation
-- Theming switch for dark and light
 - Profile
 - GraphQL ?
-- Redux or React Context ?
 - Add license
 
 ### License
