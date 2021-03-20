@@ -1,7 +1,7 @@
 import { Button } from "@material-ui/core";
 import Tooltip from "@material-ui/core/Tooltip";
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import WbSunnyIcon from "@material-ui/icons/WbSunny";
 import Brightness3Icon from "@material-ui/icons/Brightness3";
 import navigation from "../../styles/navigation.module.css";
@@ -9,10 +9,29 @@ import { ToggleThemeContext } from "../theme/themeProvider";
 
 export default function Navigation() {
   const { toggleTheme, isDark } = useContext(ToggleThemeContext);
-  console.log("Dark Mode ? ", isDark);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+  const handleScroll = () => {
+    const currentScrollPos = window.pageYOffset;
+    setVisible(
+      (prevScrollPos > currentScrollPos &&
+        prevScrollPos - currentScrollPos > 70) ||
+        currentScrollPos < 10
+    );
+    setPrevScrollPos(currentScrollPos);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos, visible, handleScroll]);
 
   return (
-    <nav className={navigation.nav__Bar}>
+    <nav
+      style={{ top: visible ? "0" : "-60px" }}
+      className={navigation.nav__Bar}
+      id="navbar"
+    >
       <ul className={navigation.nav__Menu}>
         <Link href="/github">
           <a>

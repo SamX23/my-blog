@@ -1,20 +1,27 @@
 .hero {
+  position: relative;
   background-color: white;
   min-height: 100vh;
   display: grid;
-  padding: 20px;
+  padding: 3em 1em;
   border-bottom: 2px solid #272341;
 }
 
 .hero__container {
   margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }
 
-.hero__container > h1 {
+.hero__images {
+  margin: auto;
+}
+
+.hero__text {
   margin: auto;
   color: #272341;
-  margin-bottom: 1em;
   font-weight: bolder;
+  padding-left: 1em;
 }
 
 .hero__NotHome {
