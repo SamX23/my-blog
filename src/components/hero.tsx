@@ -9,10 +9,22 @@ export default function Hero({ home, name }: { home?: boolean; name: string }) {
       {home ? (
         <div className={hero.hero}>
           <div className={hero.hero__container}>
-            <h1>
-              Yo! I&apos;m {name} a highly motivated self-taugh Front-End Web
-              Developer. 😎
-            </h1>
+            <div className={hero.hero__images}>
+              <Image
+                priority
+                src="/images/profile.jpg"
+                alt={name}
+                className={utilStyles.borderCircle}
+                width={250}
+                height={250}
+              />
+            </div>
+            <div className={hero.hero__text}>
+              <h1>
+                Yo! I&apos;m {name} a highly motivated self-taugh programmer.
+              </h1>
+              <p>Focusing on Front-End Web Development</p>
+            </div>
           </div>
         </div>
       ) : (
