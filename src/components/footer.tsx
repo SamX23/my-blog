@@ -1,24 +1,31 @@
+import { useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import { socialMedia } from "../mock/data";
-
-const useStyles = makeStyles({
-  root: {
-    margin: "1em 0",
-  },
-  footer_Bar: {
-    borderTop: "0.1em solid #272341",
-    paddingTop: "1em",
-  },
-  footer_text: {},
-  footer_sosmed: {
-    "& a": {
-      marginLeft: ".5em",
-    },
-  },
-});
+import { darkColorPalette, lightColorPalette } from "../theme/theme";
+import { ToggleThemeContext } from "../theme/themeProvider";
 
 export default function Footer() {
+  const { isDark } = useContext(ToggleThemeContext);
+  const useStyles = makeStyles({
+    root: {
+      margin: "1em 0",
+    },
+    footer_Bar: {
+      borderTop: "0.1em solid #272341",
+      paddingTop: "1em",
+    },
+    footer_text: {
+      color: isDark ? darkColorPalette.text : lightColorPalette.text,
+    },
+
+    footer_sosmed: {
+      "& a": {
+        marginLeft: ".5em",
+      },
+    },
+  });
+
   const classes = useStyles();
 
   return (
