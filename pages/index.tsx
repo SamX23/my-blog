@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <Layout home>
       <Navigation />
-      <section className={utilStyles.headingMd}>
+      <section className={utilStyles.headingMd && utilStyles.container}>
         <p>
           A front-end web developer as hobbiest (yet), this blog is created
           using <a href="https://nextjs.org/">Next</a> framework and{" "}

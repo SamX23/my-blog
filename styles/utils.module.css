@@ -36,3 +36,8 @@
 .padding1px {
   padding-top: 1px;
 }
+
+.container {
+  max-width: 45em;
+  margin: auto;
+}
