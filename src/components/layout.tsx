@@ -1,9 +1,23 @@
+import { makeStyles } from "@material-ui/core/styles";
 import HeadTag from "./head";
-import styles from "../../styles/layout.module.css";
 import Hero from "./hero";
 import BackToHome from "./backToHome";
 import Footer from "./footer";
 import { defaultTitle, profile } from "../mock/data";
+
+const useStyles = makeStyles({
+  container: {
+    maxWidth: "1100px",
+    padding: "0 1.5rem",
+    margin: "0 auto",
+  },
+
+  header: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+});
 
 export default function Layout({
   children,
@@ -14,11 +28,12 @@ export default function Layout({
   home?: boolean;
   siteTitle?: string;
 }) {
+  const classes = useStyles();
   return (
-    <div className={styles.container}>
+    <div className={classes.container}>
       <HeadTag siteTitle={siteTitle} />
 
-      <header className={styles.header}>
+      <header className={classes.header}>
         <Hero home={home} name={profile.fullName} />
       </header>
 

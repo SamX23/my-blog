@@ -1,51 +1,88 @@
 import Image from "next/image";
 import Link from "next/link";
-import hero from "../../styles/hero.module.css";
-import utilStyles from "../../styles/utils.module.css";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles({
+  hero: {
+    position: "relative",
+    minHeight: "100vh",
+    display: "grid",
+    padding: "3em 1em",
+    borderBottom: "2px solid #272341",
+  },
+
+  hero__container: {
+    margin: "auto",
+    display: "grid",
+    gridTemplateColumns: "1fr 2fr",
+  },
+
+  hero__imagesContainer: {
+    margin: "auto",
+  },
+
+  hero__images: {
+    borderRadius: "999px",
+  },
+
+  hero__text: {
+    margin: "auto",
+    color: "#272341",
+    fontWeight: "bolder",
+    paddingLeft: "1em",
+  },
+
+  hero__NotHome: {
+    paddingTop: "2em",
+    textAlign: "center",
+    "& h2": {
+      fontSize: "1.5rem",
+      lineHeight: "1.4",
+      margin: "1rem 0",
+    },
+  },
+});
 
 export default function Hero({ home, name }: { home?: boolean; name: string }) {
+  const classes = useStyles();
+
   return (
     <>
       {home ? (
-        <div className={hero.hero}>
-          <div className={hero.hero__container}>
-            <div className={hero.hero__images}>
+        <div className={classes.hero}>
+          <div className={classes.hero__container}>
+            <div className={classes.hero__imagesContainer}>
               <Image
                 priority
                 src="/images/profile.jpg"
                 alt={name}
-                className={utilStyles.borderCircle}
+                className={classes.hero__images}
                 width={250}
                 height={250}
               />
             </div>
-            <div className={hero.hero__text}>
+            <div className={classes.hero__text}>
               <h1>
                 Yo! I&apos;m {name} a highly motivated self-taugh programmer.
               </h1>
-              <p>Focusing on Front-End Web Development</p>
             </div>
           </div>
         </div>
       ) : (
-        <div className={hero.hero__NotHome}>
+        <div className={classes.hero__NotHome}>
           <Link href="/">
             <a>
               <Image
                 priority
                 src="/images/profile.jpg"
-                className={utilStyles.borderCircle}
+                className={classes.hero__images}
                 height={108}
                 width={108}
                 alt={name}
               />
             </a>
           </Link>
-          <h2 className={utilStyles.headingLg}>
-            <Link href="/">
-              <a className={utilStyles.colorInherit}>{name}</a>
-            </Link>
-          </h2>
+          <h2>{name}</h2>
         </div>
       )}
     </>

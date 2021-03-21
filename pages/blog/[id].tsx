@@ -1,8 +1,18 @@
 import { GetStaticProps, GetStaticPaths } from "next";
+import { makeStyles } from "@material-ui/core/styles";
 import Layout from "../../src/components/layout";
 import { getAllPostIds, getPostData } from "../../src/components/lib/posts";
 import Date from "../../src/components/date";
-import utilStyles from "../../styles/utils.module.css";
+
+const useStyles = makeStyles({
+  title: {
+    fontSize: "2rem",
+    lineHeight: "1.3",
+    fontWeight: 700,
+    letterSpacing: "-0.05rem",
+    margin: "1rem 0",
+  },
+});
 
 export default function Post({
   postData,
@@ -13,11 +23,12 @@ export default function Post({
     contentHtml: string;
   };
 }) {
+  const classes = useStyles();
   return (
     <Layout siteTitle={postData.title}>
       <article>
-        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-        <div className={utilStyles.lightText}>
+        <h1 className={classes.title}>{postData.title}</h1>
+        <div>
           <Date dateString={postData.date} />
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
