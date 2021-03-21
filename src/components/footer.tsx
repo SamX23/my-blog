@@ -18,10 +18,10 @@ export default function Footer() {
     footer_text: {
       color: isDark ? darkColorPalette.text : lightColorPalette.text,
     },
-
     footer_sosmed: {
       "& a": {
         marginLeft: ".5em",
+        fontWeight: "500",
       },
     },
   });
