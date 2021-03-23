@@ -3,10 +3,12 @@ import { createMuiTheme, ThemeOptions } from "@material-ui/core/styles";
 export const darkColorPalette = {
   primary: "rgb(0,0,0)",
   text: "rgb(255,255,255)",
+  loadingBar: "#7b7b7b",
 };
 export const lightColorPalette = {
   primary: "rgb(255,255,255)",
   text: "rgb(0,0,0)",
+  loadingBar: "#6cb0ff",
 };
 
 const options = (dark: boolean): ThemeOptions => {
