@@ -1,18 +1,23 @@
-import { Button } from "@material-ui/core";
-import Tooltip from "@material-ui/core/Tooltip";
 import Link from "next/link";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import WbSunnyIcon from "@material-ui/icons/WbSunny";
-import Brightness3Icon from "@material-ui/icons/Brightness3";
-import { ToggleThemeContext } from "../theme/themeProvider";
+import ProgressBar from "./progressBar";
+import ThemeButton from "./themeButton";
 
 const useStyles = makeStyles({
   nav__Bar: {
     position: "fixed",
-    top: 0,
     width: "100%",
+    zIndex: 1,
+  },
+
+  nav__Container: {
+    position: "fixed",
     maxWidth: "1100px",
+    width: "100%",
+    margin: "auto",
+    left: 0,
+    right: 0,
     transition: "top 0.5s",
   },
 
@@ -39,7 +44,6 @@ const useStyles = makeStyles({
 
 export default function Navigation() {
   const classes = useStyles();
-  const { toggleTheme, isDark } = useContext(ToggleThemeContext);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const handleScroll = () => {
@@ -58,28 +62,26 @@ export default function Navigation() {
   }, [prevScrollPos, visible, handleScroll]);
 
   return (
-    <nav
-      style={{ top: visible ? "0" : "-60px" }}
-      className={classes.nav__Bar}
-      id="navbar"
-    >
-      <ul className={classes.nav__Menu}>
-        <Link href="/github">
-          <a>
-            <li>Github</li>
-          </a>
-        </Link>
-        <Link href="/blog">
-          <a>
-            <li>Blog</li>
-          </a>
-        </Link>
-        <Tooltip title="Toggle Theme">
-          <Button variant="text" onClick={toggleTheme}>
-            {isDark ? <WbSunnyIcon /> : <Brightness3Icon />}
-          </Button>
-        </Tooltip>
-      </ul>
+    <nav className={classes.nav__Bar} id="navbar">
+      <ProgressBar />
+      <div
+        className={classes.nav__Container}
+        style={{ top: visible ? "0" : "-60px" }}
+      >
+        <ul className={classes.nav__Menu}>
+          <Link href="/github">
+            <a>
+              <li>Github</li>
+            </a>
+          </Link>
+          <Link href="/blog">
+            <a>
+              <li>Blog</li>
+            </a>
+          </Link>
+          <ThemeButton />
+        </ul>
+      </div>
     </nav>
   );
 }
