@@ -43,7 +43,12 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Hero({ home, name }: { home?: boolean; name: string }) {
+type Props = {
+  home?: boolean;
+  name: string;
+};
+
+export default function Hero({ home, name }: Props) {
   const classes = useStyles();
 
   return (
