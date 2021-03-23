@@ -2,7 +2,7 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import { makeStyles } from "@material-ui/core/styles";
 import Layout from "../../src/components/layout";
 import { getAllPostIds, getPostData } from "../../src/components/lib/posts";
-import Date from "../../src/components/date";
+import DateFormatter from "../../src/components/dateFormatter";
 
 const useStyles = makeStyles({
   title: {
@@ -29,7 +29,7 @@ export default function Post({
       <article>
         <h1 className={classes.title}>{postData.title}</h1>
         <div>
-          <Date dateString={postData.date} />
+          <DateFormatter dateString={postData.date} />
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>

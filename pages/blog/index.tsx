@@ -2,7 +2,7 @@ import Link from "next/link";
 import { GetStaticProps } from "next";
 import { makeStyles } from "@material-ui/core/styles";
 import { getSortedPostsData } from "../../src/components/lib/posts";
-import Date from "../../src/components/date";
+import DateFormatter from "../../src/components/dateFormatter";
 import Layout from "../../src/components/layout";
 import { defaultTitle } from "../../src/mock/data";
 
@@ -43,7 +43,7 @@ export default function Blog({
               </Link>
               <br />
               <small>
-                <Date dateString={date} />
+                <DateFormatter dateString={date} />
               </small>
             </li>
           ))}
