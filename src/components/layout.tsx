@@ -5,6 +5,12 @@ import BackToHome from "./backToHome";
 import Footer from "./footer";
 import { defaultTitle, profile } from "../mock/data";
 
+type Props = {
+  children: React.ReactNode;
+  home?: boolean;
+  siteTitle?: string;
+};
+
 const useStyles = makeStyles({
   container: {
     maxWidth: "1100px",
@@ -19,15 +25,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Layout({
-  children,
-  home,
-  siteTitle = defaultTitle,
-}: {
-  children: React.ReactNode;
-  home?: boolean;
-  siteTitle?: string;
-}) {
+const Layout = ({ children, home, siteTitle = defaultTitle }: Props) => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
@@ -44,4 +42,6 @@ export default function Layout({
       <Footer />
     </div>
   );
-}
+};
+
+export default Layout;

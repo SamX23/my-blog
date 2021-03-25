@@ -2,6 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { makeStyles } from "@material-ui/core/styles";
 
+type Props = {
+  home?: boolean;
+  name: string;
+};
+
 const useStyles = makeStyles({
   hero: {
     position: "relative",
@@ -43,12 +48,7 @@ const useStyles = makeStyles({
   },
 });
 
-type Props = {
-  home?: boolean;
-  name: string;
-};
-
-export default function Hero({ home, name }: Props) {
+const Hero = ({ home, name }: Props) => {
   const classes = useStyles();
 
   return (
@@ -92,4 +92,6 @@ export default function Hero({ home, name }: Props) {
       )}
     </>
   );
-}
+};
+
+export default Hero;

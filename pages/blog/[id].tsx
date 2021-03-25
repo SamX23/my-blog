@@ -4,6 +4,14 @@ import Layout from "../../src/components/layout";
 import { getAllPostIds, getPostData } from "../../src/components/lib/posts";
 import DateFormatter from "../../src/components/dateFormatter";
 
+type Props = {
+  postData: {
+    title: string;
+    date: string;
+    contentHtml: string;
+  };
+};
+
 const useStyles = makeStyles({
   title: {
     fontSize: "2rem",
@@ -14,15 +22,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Post({
-  postData,
-}: {
-  postData: {
-    title: string;
-    date: string;
-    contentHtml: string;
-  };
-}) {
+const Post = ({ postData }: Props) => {
   const classes = useStyles();
   return (
     <Layout siteTitle={postData.title}>
@@ -35,7 +35,7 @@ export default function Post({
       </article>
     </Layout>
   );
-}
+};
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIds();
@@ -53,3 +53,5 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
   };
 };
+
+export default Post;

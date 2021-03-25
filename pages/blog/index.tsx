@@ -6,6 +6,14 @@ import DateFormatter from "../../src/components/dateFormatter";
 import Layout from "../../src/components/layout";
 import { defaultTitle } from "../../src/mock/data";
 
+type Props = {
+  allPostsData: {
+    date: string;
+    title: string;
+    id: string;
+  }[];
+};
+
 const useStyles = makeStyles({
   container: {
     fontSize: "1.2rem",
@@ -19,15 +27,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Blog({
-  allPostsData,
-}: {
-  allPostsData: {
-    date: string;
-    title: string;
-    id: string;
-  }[];
-}) {
+const Blog = ({ allPostsData }: Props) => {
   const classes = useStyles();
   const blogTitle = `The digital writing of Sami | ${defaultTitle}`;
 
@@ -51,7 +51,7 @@ export default function Blog({
       </section>
     </Layout>
   );
-}
+};
 
 export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getSortedPostsData();
@@ -61,3 +61,5 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   };
 };
+
+export default Blog;
