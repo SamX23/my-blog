@@ -47,6 +47,7 @@ const theme = createMuiTheme({
             lineHeight: "1.6",
             fontSize: "18px",
           },
+          scrollBehavior: "smooth",
         },
 
         a: {
