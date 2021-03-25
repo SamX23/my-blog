@@ -3,7 +3,7 @@ import { useContext, useEffect } from "react";
 import { darkColorPalette, lightColorPalette } from "../theme/theme";
 import { ToggleThemeContext } from "../theme/themeProvider";
 
-function ProgressBar() {
+const ProgressBar = () => {
   const { isDark } = useContext(ToggleThemeContext);
   const useStyles = makeStyles({
     progressContainer: {
@@ -41,6 +41,6 @@ function ProgressBar() {
       <div className={classes.progressBar} id="myBar" />
     </div>
   );
-}
+};
 
 export default ProgressBar;

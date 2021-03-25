@@ -42,7 +42,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Navigation() {
+const Navigation = () => {
   const classes = useStyles();
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
@@ -84,4 +84,6 @@ export default function Navigation() {
       </div>
     </nav>
   );
-}
+};
+
+export default Navigation;

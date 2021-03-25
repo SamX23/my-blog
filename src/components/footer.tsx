@@ -5,7 +5,7 @@ import { socialMedia } from "../mock/data";
 import { darkColorPalette, lightColorPalette } from "../theme/theme";
 import { ToggleThemeContext } from "../theme/themeProvider";
 
-export default function Footer() {
+const Footer = () => {
   const { isDark } = useContext(ToggleThemeContext);
   const useStyles = makeStyles({
     root: {
@@ -25,7 +25,6 @@ export default function Footer() {
       },
     },
   });
-
   const classes = useStyles();
 
   return (
@@ -55,4 +54,6 @@ export default function Footer() {
       </Grid>
     </footer>
   );
-}
+};
+
+export default Footer;

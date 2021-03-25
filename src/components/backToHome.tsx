@@ -7,7 +7,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function BackToHome() {
+const BackToHome = () => {
   const classes = useStyles();
   return (
     <div className={classes.backToHome}>
@@ -16,4 +16,6 @@ export default function BackToHome() {
       </Link>
     </div>
   );
-}
+};
+
+export default BackToHome;

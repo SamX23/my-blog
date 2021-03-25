@@ -5,7 +5,7 @@ import WbSunnyIcon from "@material-ui/icons/WbSunny";
 import Brightness3Icon from "@material-ui/icons/Brightness3";
 import { ToggleThemeContext } from "../theme/themeProvider";
 
-function ThemeButton() {
+const ThemeButton = () => {
   const { toggleTheme, isDark } = useContext(ToggleThemeContext);
 
   return (
@@ -15,6 +15,6 @@ function ThemeButton() {
       </Button>
     </Tooltip>
   );
-}
+};
 
 export default ThemeButton;
