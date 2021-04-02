@@ -4,10 +4,12 @@ import Hero from "./hero";
 import BackToHome from "./backToHome";
 import Footer from "./footer";
 import { defaultTitle, profile } from "../mock/data";
+import Navigation from "./navigation";
 
 type Props = {
   children: React.ReactNode;
   home?: boolean;
+  blog?: boolean;
   siteTitle?: string;
 };
 
@@ -25,22 +27,25 @@ const useStyles = makeStyles({
   },
 });
 
-const Layout = ({ children, home, siteTitle = defaultTitle }: Props) => {
+const Layout = ({ children, home, blog, siteTitle = defaultTitle }: Props) => {
   const classes = useStyles();
   return (
-    <div className={classes.container}>
+    <>
       <HeadTag siteTitle={siteTitle} />
+      <Navigation blog={blog} />
 
-      <header className={classes.header}>
-        <Hero home={home} name={profile.fullName} />
-      </header>
+      <div className={classes.container}>
+        <header className={classes.header}>
+          <Hero home={home} name={profile.fullName} />
+        </header>
 
-      <main>{children}</main>
+        <main>{children}</main>
 
-      {!home && <BackToHome />}
+        {!home && <BackToHome />}
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 };
 

@@ -1,7 +1,6 @@
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Layout from "../src/components/layout";
-import Navigation from "../src/components/navigation";
 
 const useStyles = makeStyles({
   typography: {
@@ -18,7 +17,6 @@ const Home = () => {
   const classes = useStyles();
   return (
     <>
-      <Navigation />
       <Layout home>
         <section className={classes.container}>
           <Typography variant="h6" className={classes.typography}>
