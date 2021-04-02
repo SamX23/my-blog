@@ -12,6 +12,7 @@ const HeadTag = ({ siteTitle }: Props) => (
       content={theme.palette.primary.main}
       key="theme-color"
     />
+    <meta charSet="utf-8" />
     <meta
       name="viewport"
       content="initial-scale=1.0, width=device-width"
