@@ -25,7 +25,7 @@ const useStyles = makeStyles({
 const Post = ({ postData }: Props) => {
   const classes = useStyles();
   return (
-    <Layout siteTitle={postData.title}>
+    <Layout blog siteTitle={postData.title}>
       <article>
         <h1 className={classes.title}>{postData.title}</h1>
         <div>

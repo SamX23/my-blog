@@ -32,7 +32,7 @@ const Blog = ({ allPostsData }: Props) => {
   const blogTitle = `The digital writing of Sami | ${defaultTitle}`;
 
   return (
-    <Layout siteTitle={blogTitle}>
+    <Layout blog siteTitle={blogTitle}>
       <section className={classes.container}>
         <h2 className={classes.title}>Blog</h2>
         <ul>

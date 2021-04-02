@@ -4,6 +4,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import ProgressBar from "./progressBar";
 import ThemeButton from "./themeButton";
 
+type Props = {
+  blog?: boolean;
+};
+
 const useStyles = makeStyles({
   nav__Bar: {
     position: "fixed",
@@ -42,7 +46,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Navigation = () => {
+const Navigation = ({ blog }: Props) => {
   const classes = useStyles();
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
@@ -62,27 +66,31 @@ const Navigation = () => {
   }, [prevScrollPos, visible, handleScroll]);
 
   return (
-    <nav className={classes.nav__Bar} id="navbar">
-      <ProgressBar />
-      <div
-        className={classes.nav__Container}
-        style={{ top: visible ? "0" : "-60px" }}
-      >
-        <ul className={classes.nav__Menu}>
-          <Link href="/github">
-            <a>
-              <li>Github</li>
-            </a>
-          </Link>
-          <Link href="/blog">
-            <a>
-              <li>Blog</li>
-            </a>
-          </Link>
-          <ThemeButton />
-        </ul>
-      </div>
-    </nav>
+    <>
+      {!blog && (
+        <nav className={classes.nav__Bar} id="navbar">
+          <ProgressBar />
+          <div
+            className={classes.nav__Container}
+            style={{ top: visible ? "0" : "-60px" }}
+          >
+            <ul className={classes.nav__Menu}>
+              <Link href="/github">
+                <a>
+                  <li>Github</li>
+                </a>
+              </Link>
+              <Link href="/blog">
+                <a>
+                  <li>Blog</li>
+                </a>
+              </Link>
+              <ThemeButton />
+            </ul>
+          </div>
+        </nav>
+      )}
+    </>
   );
 };
 
