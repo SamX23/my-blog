@@ -75,11 +75,11 @@ const Navigation = ({ blog }: Props) => {
             style={{ top: visible ? "0" : "-60px" }}
           >
             <ul className={classes.nav__Menu}>
-              <Link href="/github">
-                <a>
-                  <li>Github</li>
-                </a>
-              </Link>
+              {/* <Link href="/github"> */}
+              <a href="https://github.com/samx23">
+                <li>Github</li>
+              </a>
+              {/* </Link> */}
               <Link href="/blog">
                 <a>
                   <li>Blog</li>
