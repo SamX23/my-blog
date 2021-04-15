@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import Grid from "@material-ui/core/Grid";
+import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import { ToggleThemeContext } from "../theme/themeProvider";
 import { darkColorPalette, lightColorPalette } from "../theme/theme";
@@ -23,10 +24,6 @@ const Layout = ({ children, home, blog, siteTitle = defaultTitle }: Props) => {
       color: isDark ? darkColorPalette.text : lightColorPalette.text,
       minHeight: "100vh",
     },
-    container: {
-      maxWidth: "1100px",
-      padding: "0 1.5rem",
-    },
     header: {
       display: "flex",
       flexDirection: "column",
@@ -39,7 +36,7 @@ const Layout = ({ children, home, blog, siteTitle = defaultTitle }: Props) => {
     <Grid container direction="column" className={classes.layout}>
       <HeadTag siteTitle={siteTitle} />
       <Navigation blog={blog} />
-      <div className={classes.container}>
+      <Container>
         <header className={classes.header}>
           <Hero home={home} name={profile.fullName} />
         </header>
@@ -48,7 +45,7 @@ const Layout = ({ children, home, blog, siteTitle = defaultTitle }: Props) => {
 
         {!home && <BackToHome />}
         <Footer />
-      </div>
+      </Container>
     </Grid>
   );
 };

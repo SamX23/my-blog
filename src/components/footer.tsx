@@ -9,17 +9,33 @@ const Footer = () => {
     },
     footer_Bar: {
       padding: "1em",
+      "@media(max-width: 700px)": {
+        textAlign: "center",
+      },
     },
     footer_author: {
-      fontWeight: "bold",
+      paddingRight: "1em",
+      "& span": {
+        fontWeight: "bold",
+      },
     },
     footer_sosmed: {
+      textAlign: "right",
       "& a": {
         marginLeft: ".5em",
         fontWeight: "500",
       },
+      "@media(max-width: 700px)": {
+        borderLeft: "1px solid black",
+        textAlign: "center",
+        display: "grid",
+        "& a": {
+          margin: "unset",
+        },
+      },
     },
   });
+
   const classes = useStyles();
 
   return (
@@ -31,14 +47,14 @@ const Footer = () => {
         justify="space-between"
         alignItems="center"
       >
-        <Grid item>
+        <Grid item xs className={classes.footer_author}>
           Ngoding with{" "}
           <span role="img" aria-label="love">
             ♥️
           </span>{" "}
-          by <span className={classes.footer_author}>Sami</span>
+          by <span>Sami</span>
         </Grid>
-        <Grid item className={classes.footer_sosmed}>
+        <Grid item xs className={classes.footer_sosmed}>
           {socialMedia.networks.map((item) => (
             <a key={item.id} href={item.url}>
               {item.name}
