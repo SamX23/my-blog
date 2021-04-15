@@ -9,6 +9,7 @@ import { createMuiTheme, ThemeOptions } from "@material-ui/core/styles";
 
 export const darkColorPalette = {
   primary: "rgba(15, 48, 87, 1)",
+  secondary: "rgba(96, 182, 243,1)",
   text: "rgba(236, 236, 228, 1)",
   link: "rgba(0, 231, 239, 1)",
   linkHover: "rgba(96, 182, 243,1)",
@@ -16,6 +17,7 @@ export const darkColorPalette = {
 };
 export const lightColorPalette = {
   primary: "rgba(236, 236, 228, 1)",
+  secondary: "rgba(0, 136, 145, 1)",
   text: "rgba(15, 48, 87, 1)",
   link: "rgba(0, 88, 122, 1)",
   linkHover: "rgba(96, 182, 243,1)",
