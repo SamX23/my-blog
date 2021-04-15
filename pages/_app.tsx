@@ -1,9 +1,7 @@
 import type { AppProps } from "next/app";
 import { useEffect } from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { ThemeProvider } from "@material-ui/core/styles";
-import { ThemeProvider as DarkMode } from "../src/theme/themeProvider";
-import theme from "../src/theme/theme";
+import { ThemeProvider } from "../src/theme/themeProvider";
 
 function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -14,11 +12,9 @@ function App({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider>
       <CssBaseline />
-      <DarkMode>
-        <Component {...pageProps} />
-      </DarkMode>
+      <Component {...pageProps} />
     </ThemeProvider>
   );
 }
