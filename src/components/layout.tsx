@@ -1,20 +1,17 @@
 import { useContext } from "react";
+import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
-import HeadTag from "./head";
-import Hero from "./hero";
-import BackToHome from "./backToHome";
-import Footer from "./footer";
-import { defaultTitle, profile } from "../mock/data";
-import Navigation from "./navigation";
-import { darkColorPalette, lightColorPalette } from "../theme/theme";
 import { ToggleThemeContext } from "../theme/themeProvider";
+import { darkColorPalette, lightColorPalette } from "../theme/theme";
+import { defaultTitle, profile } from "../mock/data";
+import { HeadTag, Navigation, Hero, BackToHome, Footer } from "./index";
 
-type Props = {
+interface Props {
   children: React.ReactNode;
   home?: boolean;
   blog?: boolean;
   siteTitle?: string;
-};
+}
 
 const Layout = ({ children, home, blog, siteTitle = defaultTitle }: Props) => {
   const { isDark } = useContext(ToggleThemeContext);
@@ -24,11 +21,11 @@ const Layout = ({ children, home, blog, siteTitle = defaultTitle }: Props) => {
         ? darkColorPalette.primary
         : lightColorPalette.primary,
       color: isDark ? darkColorPalette.text : lightColorPalette.text,
+      minHeight: "100vh",
     },
     container: {
       maxWidth: "1100px",
       padding: "0 1.5rem",
-      margin: "0 auto",
     },
     header: {
       display: "flex",
@@ -39,7 +36,7 @@ const Layout = ({ children, home, blog, siteTitle = defaultTitle }: Props) => {
 
   const classes = useStyles();
   return (
-    <div className={classes.layout}>
+    <Grid container direction="column" className={classes.layout}>
       <HeadTag siteTitle={siteTitle} />
       <Navigation blog={blog} />
       <div className={classes.container}>
@@ -52,7 +49,7 @@ const Layout = ({ children, home, blog, siteTitle = defaultTitle }: Props) => {
         {!home && <BackToHome />}
         <Footer />
       </div>
-    </div>
+    </Grid>
   );
 };
 
