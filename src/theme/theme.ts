@@ -1,21 +1,24 @@
 import { createMuiTheme, ThemeOptions } from "@material-ui/core/styles";
 
-// Color pallete from https://colorhunt.co/palette/225739
-// rgba(231, 231, 222, 1)
+// Color pallete modified from https://colorhunt.co/palette/225739
+// rgba(236, 236, 228, 1)
+// rgba(0, 231, 239, 1)
 // rgba(0, 136, 145, 1)
 // rgba(0, 88, 122, 1)
 // rgba(15, 48, 87, 1)
 
 export const darkColorPalette = {
   primary: "rgba(15, 48, 87, 1)",
-  // secondary: "#888811",
-  text: "rgba(231, 231, 222, 1)",
+  text: "rgba(236, 236, 228, 1)",
+  link: "rgba(0, 231, 239, 1)",
+  linkHover: "rgba(96, 182, 243,1)",
   loadingBar: "rgba(0, 136, 145, 1)",
 };
 export const lightColorPalette = {
-  primary: "rgba(231, 231, 222, 1)",
-  // secondary: "#112288",
+  primary: "rgba(236, 236, 228, 1)",
   text: "rgba(15, 48, 87, 1)",
+  link: "rgba(0, 88, 122, 1)",
+  linkHover: "rgba(96, 182, 243,1)",
   loadingBar: "rgba(0, 88, 122, 1)",
 };
 
@@ -27,9 +30,6 @@ const options = (dark: boolean): ThemeOptions => {
       primary: {
         main: paletteColors.primary,
       },
-      // secondary: {
-      //   main: paletteColors.secondary,
-      // },
     },
     typography: {
       fontFamily:
@@ -51,10 +51,11 @@ const options = (dark: boolean): ThemeOptions => {
             scrollBehavior: "smooth",
           },
           a: {
-            color: "red",
+            color: paletteColors.link,
             textDecoration: "none",
+            fontWeight: "bold",
             "&:hover": {
-              color: "green",
+              color: paletteColors.linkHover,
             },
           },
         },
@@ -64,4 +65,4 @@ const options = (dark: boolean): ThemeOptions => {
 };
 
 export const darkTheme = createMuiTheme(options(false));
-export const lightTheme = createMuiTheme(options(false));
+export const lightTheme = createMuiTheme(options(true));

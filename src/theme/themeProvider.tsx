@@ -1,29 +1,23 @@
 import { Theme } from "@material-ui/core";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
-import {
-  createContext,
-  ReactNode,
-  useCallback,
-  useEffect,
-  useState,
-} from "react";
+import { createContext, useCallback, useEffect, useState } from "react";
 import { darkTheme, lightTheme } from "./theme";
 
-interface ThemeProviderProps {
-  children: ReactNode;
+interface childrenProps {
+  children: React.ReactNode;
 }
-
-export const ToggleThemeContext = createContext({
-  toggleTheme: () => {},
-  isDark: false,
-});
 
 type SelectedTheme = {
   themeName: string;
   appliedTheme: Theme;
 };
 
-export const ThemeProvider = ({ children }: ThemeProviderProps) => {
+export const ToggleThemeContext = createContext({
+  toggleTheme: () => {},
+  isDark: false,
+});
+
+export const ThemeProvider = ({ children }: childrenProps) => {
   const [selectedTheme, setSelectedTheme] = useState<SelectedTheme>({
     appliedTheme: darkTheme,
     themeName: "darkTheme",

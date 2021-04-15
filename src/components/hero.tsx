@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { makeStyles } from "@material-ui/core/styles";
 import ScrollToBottom from "./scrollToBottom";
-import Typography from "@material-ui/core/Typography";
 
 type Props = {
   home?: boolean;
@@ -71,14 +70,6 @@ const Hero = ({ home, name }: Props) => {
               <h1 color="secondary">
                 Yo! I&apos;m {name} a highly motivated self-taugh programmer.
               </h1>
-              {/* 
-              <Typography color="primary" component="h1">
-                FIRST
-              </Typography>
-
-              <Typography color="secondary" component="h1">
-                SECOND
-              </Typography> */}
             </div>
             <ScrollToBottom />
           </div>
