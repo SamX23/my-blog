@@ -11,7 +11,7 @@ const ThemeButton = () => {
   return (
     <Tooltip title="Toggle theme">
       <Button variant="text" onClick={toggleTheme}>
-        {isDark ? <WbSunnyIcon /> : <Brightness3Icon />}
+        {isDark ? <Brightness3Icon /> : <WbSunnyIcon />}
       </Button>
     </Tooltip>
   );
