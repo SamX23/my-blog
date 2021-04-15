@@ -23,9 +23,7 @@ type SelectedTheme = {
   appliedTheme: Theme;
 };
 
-export const ThemeProvider: React.FC<ThemeProviderProps> = ({
-  children,
-}: ThemeProviderProps) => {
+export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const [selectedTheme, setSelectedTheme] = useState<SelectedTheme>({
     appliedTheme: darkTheme,
     themeName: "darkTheme",

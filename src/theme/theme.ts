@@ -1,14 +1,22 @@
 import { createMuiTheme, ThemeOptions } from "@material-ui/core/styles";
 
+// Color pallete from https://colorhunt.co/palette/225739
+// rgba(231, 231, 222, 1)
+// rgba(0, 136, 145, 1)
+// rgba(0, 88, 122, 1)
+// rgba(15, 48, 87, 1)
+
 export const darkColorPalette = {
-  primary: "rgb(0,0,0)",
-  text: "rgb(255,255,255)",
-  loadingBar: "#7b7b7b",
+  primary: "rgba(15, 48, 87, 1)",
+  // secondary: "#888811",
+  text: "rgba(231, 231, 222, 1)",
+  loadingBar: "rgba(0, 136, 145, 1)",
 };
 export const lightColorPalette = {
-  primary: "rgb(255,255,255)",
-  text: "rgb(0,0,0)",
-  loadingBar: "#6cb0ff",
+  primary: "rgba(231, 231, 222, 1)",
+  // secondary: "#112288",
+  text: "rgba(15, 48, 87, 1)",
+  loadingBar: "rgba(0, 88, 122, 1)",
 };
 
 const options = (dark: boolean): ThemeOptions => {
@@ -19,54 +27,41 @@ const options = (dark: boolean): ThemeOptions => {
       primary: {
         main: paletteColors.primary,
       },
+      // secondary: {
+      //   main: paletteColors.secondary,
+      // },
+    },
+    typography: {
+      fontFamily:
+        "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
+    },
+    overrides: {
+      MuiCssBaseline: {
+        "@global": {
+          "*": {
+            boxSizing: "border-box",
+          },
+          html: {
+            "& body": {
+              padding: "0",
+              margin: "0",
+              lineHeight: "1.6",
+              fontSize: "18px",
+            },
+            scrollBehavior: "smooth",
+          },
+          a: {
+            color: "red",
+            textDecoration: "none",
+            "&:hover": {
+              color: "green",
+            },
+          },
+        },
+      },
     },
   };
 };
 
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: "#fff",
-    },
-  },
-  typography: {
-    fontFamily:
-      "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
-  },
-  overrides: {
-    MuiCssBaseline: {
-      "@global": {
-        "*": {
-          boxSizing: "border-box",
-        },
-
-        html: {
-          "& body": {
-            padding: "0",
-            margin: "0",
-            lineHeight: "1.6",
-            fontSize: "18px",
-          },
-          scrollBehavior: "smooth",
-        },
-
-        a: {
-          color: "#0070f3",
-          textDecoration: "none",
-          "&:hover": {
-            color: "#0000f3",
-          },
-        },
-
-        img: {
-          maxWidth: "100%",
-          display: "block",
-        },
-      },
-    },
-  },
-});
-
 export const darkTheme = createMuiTheme(options(false));
 export const lightTheme = createMuiTheme(options(false));
-export default theme;
