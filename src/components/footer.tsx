@@ -5,12 +5,13 @@ import { socialMedia } from "../mock/data";
 const Footer = () => {
   const useStyles = makeStyles({
     root: {
-      margin: "1em 0",
-      padding: "1em o",
+      borderTop: "0.1em solid #272341",
     },
     footer_Bar: {
-      borderTop: "0.1em solid #272341",
-      paddingTop: "1em",
+      padding: "1em",
+    },
+    footer_author: {
+      fontWeight: "bold",
     },
     footer_sosmed: {
       "& a": {
@@ -35,9 +36,8 @@ const Footer = () => {
           <span role="img" aria-label="love">
             ♥️
           </span>{" "}
-          by <a href="https://kalamallah.xyz"> Sami</a>
+          by <span className={classes.footer_author}>Sami</span>
         </Grid>
-
         <Grid item className={classes.footer_sosmed}>
           {socialMedia.networks.map((item) => (
             <a key={item.id} href={item.url}>

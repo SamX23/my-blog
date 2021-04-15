@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   backToHome: {
-    margin: "3rem 0 0",
+    margin: "1rem 0",
   },
 });
 

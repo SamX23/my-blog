@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
-import ProgressBar from "./progressBar";
-import ThemeButton from "./themeButton";
+import { ProgressBar, ThemeButton } from "./index";
 
-type Props = {
+interface Props {
   blog?: boolean;
-};
+}
 
 const useStyles = makeStyles({
   nav__Bar: {
@@ -18,7 +18,6 @@ const useStyles = makeStyles({
   nav__Container: {
     position: "fixed",
     maxWidth: "1100px",
-    width: "100%",
     margin: "auto",
     left: 0,
     right: 0,
@@ -26,22 +25,13 @@ const useStyles = makeStyles({
   },
 
   nav__Menu: {
-    display: "grid",
-    listStyle: "none",
-    gridTemplateColumns: "2fr 2fr 1fr",
-    padding: "1em 0",
-    margin: 0,
+    padding: ".5em",
+    textAlign: "center",
     "& a": {
-      width: "100%",
-      textAlign: "center",
       fontWeight: 500,
-      "&:hover": {
-        color: "black",
-      },
     },
     "& button": {
-      padding: 0,
-      width: "50%",
+      height: "3rem",
     },
   },
 });
@@ -74,19 +64,27 @@ const Navigation = ({ blog }: Props) => {
             className={classes.nav__Container}
             style={{ top: visible ? "0" : "-60px" }}
           >
-            <ul className={classes.nav__Menu}>
+            <Grid
+              container
+              direction="row"
+              justify="center"
+              alignItems="center"
+              className={classes.nav__Menu}
+            >
               {/* <Link href="/github"> */}
-              <a href="https://github.com/samx23">
-                <li>Github</li>
-              </a>
+              <Grid item xs>
+                <a href="https://github.com/samx23">Github</a>
+              </Grid>
               {/* </Link> */}
-              <Link href="/blog">
-                <a>
-                  <li>Blog</li>
-                </a>
-              </Link>
-              <ThemeButton />
-            </ul>
+              <Grid item xs>
+                <Link href="/blog">
+                  <a>Blog</a>
+                </Link>
+              </Grid>
+              <Grid item xs={1}>
+                <ThemeButton />
+              </Grid>
+            </Grid>
           </div>
         </nav>
       )}
