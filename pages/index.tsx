@@ -19,7 +19,7 @@ const Home = () => {
     <>
       <Layout home>
         <section className={classes.container}>
-          <Typography variant="h6" className={classes.typography}>
+          <Typography variant="body1" className={classes.typography}>
             A front-end web developer as hobbiest (yet), focus on React
             technology and I have developed personal project on github. This
             blog is also created using <a href="https://nextjs.org/">Next</a>{" "}
