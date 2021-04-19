@@ -22,7 +22,6 @@ const Layout = ({ children, home, blog, siteTitle = defaultTitle }: Props) => {
         ? darkColorPalette.primary
         : lightColorPalette.primary,
       color: isDark ? darkColorPalette.text : lightColorPalette.text,
-      minHeight: "100vh",
     },
     header: {
       display: "flex",

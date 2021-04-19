@@ -4,9 +4,6 @@ import { socialMedia } from "../mock/data";
 
 const Footer = () => {
   const useStyles = makeStyles({
-    root: {
-      borderTop: "0.1em solid #272341",
-    },
     footer_Bar: {
       padding: "1em",
       "@media(max-width: 700px)": {
@@ -39,7 +36,8 @@ const Footer = () => {
   const classes = useStyles();
 
   return (
-    <footer className={classes.root} id="footer">
+    <footer>
+      <hr />
       <Grid
         className={classes.footer_Bar}
         container
@@ -48,11 +46,11 @@ const Footer = () => {
         alignItems="center"
       >
         <Grid item xs className={classes.footer_author}>
-          Ngoding with{" "}
+          Mngodonf with{" "}
           <span role="img" aria-label="love">
             ♥️
           </span>{" "}
-          by <span>Sami</span>
+          by <span>Kang Sami</span>
         </Grid>
         <Grid item xs className={classes.footer_sosmed}>
           {socialMedia.networks.map((item) => (

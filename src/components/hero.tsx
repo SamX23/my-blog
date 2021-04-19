@@ -1,5 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import ScrollToBottom from "./scrollToBottom";
 
@@ -12,37 +15,34 @@ const useStyles = makeStyles({
   hero: {
     position: "relative",
     minHeight: "100vh",
-    display: "grid",
     padding: "3em 1em",
-    borderBottom: "2px solid #272341",
-  },
-
-  hero__container: {
-    margin: "auto",
-    display: "grid",
-    gridTemplateColumns: "1fr 2fr",
   },
 
   hero__imagesContainer: {
     margin: "auto",
+    padding: "2rem",
   },
 
   hero__images: {
-    borderRadius: "999px",
+    borderRadius: "25%",
   },
 
   hero__text: {
     margin: "auto",
-    fontWeight: "bolder",
     paddingLeft: "1em",
+    "& h1": {
+      fontWeight: "bolder",
+      fontSize: "3rem",
+    },
   },
 
   hero__NotHome: {
     paddingTop: "2em",
     textAlign: "center",
     "& h2": {
-      fontSize: "1.5rem",
-      lineHeight: "1.4",
+      fontSize: "2.5rem",
+      fontWeight: "400",
+      lineHeight: "1",
       margin: "1rem 0",
     },
   },
@@ -54,9 +54,9 @@ const Hero = ({ home, name }: Props) => {
   return (
     <>
       {home ? (
-        <div className={classes.hero}>
-          <div className={classes.hero__container}>
-            <div className={classes.hero__imagesContainer}>
+        <>
+          <Grid container className={classes.hero}>
+            <Grid item className={classes.hero__imagesContainer}>
               <Image
                 priority
                 src="/images/profile.jpg"
@@ -65,17 +65,19 @@ const Hero = ({ home, name }: Props) => {
                 width={250}
                 height={250}
               />
-            </div>
-            <div className={classes.hero__text}>
-              <h1 color="secondary">
-                Yo! I&apos;m {name} a highly motivated self-taugh programmer.
-              </h1>
-            </div>
+            </Grid>
+            <Grid item xs className={classes.hero__text}>
+              <Typography variant="h1">
+                Hi! <span>👋</span> I&apos;m {name} a highly motivated
+                self-taugh <span>🕸</span> developer.
+              </Typography>
+            </Grid>
             <ScrollToBottom />
-          </div>
-        </div>
+          </Grid>
+          <hr />
+        </>
       ) : (
-        <div className={classes.hero__NotHome}>
+        <Box className={classes.hero__NotHome}>
           <Link href="/">
             <a>
               <Image
@@ -88,8 +90,8 @@ const Hero = ({ home, name }: Props) => {
               />
             </a>
           </Link>
-          <h2>{name}</h2>
-        </div>
+          <Typography variant="h2">{name}</Typography>
+        </Box>
       )}
     </>
   );
