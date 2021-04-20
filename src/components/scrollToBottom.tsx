@@ -56,7 +56,7 @@ const ScrollToBottom = () => {
   const classes = useStyles();
   return (
     <div className={classes.scrollBtn}>
-      <a href="#footer" className={classes.mouse}>
+      <a href="#content" className={classes.mouse}>
         <span className={classes.mouseButton}>&nbsp;</span>
       </a>
     </div>
