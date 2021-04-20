@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
@@ -23,6 +24,8 @@ const Layout = ({ children, home, blog, siteTitle = defaultTitle }: Props) => {
         ? darkColorPalette.primary
         : lightColorPalette.primary,
       color: isDark ? darkColorPalette.text : lightColorPalette.text,
+    },
+    container: {
       minHeight: "100vh",
     },
   });
@@ -32,18 +35,29 @@ const Layout = ({ children, home, blog, siteTitle = defaultTitle }: Props) => {
     <>
       <HeadTag siteTitle={siteTitle} />
       <Navigation blog={blog} />
-      <Container className={classes.layout}>
-        <Grid container direction="column">
-          <Hero home={home} name={profile.fullName} />
-
-          <main>{children}</main>
-
-          {!home && <BackToHome />}
-
-          <ScrollToTop />
-          <Footer />
-        </Grid>
-      </Container>
+      <Box className={classes.layout}>
+        <Container>
+          <Grid
+            container
+            direction="column"
+            justify="space-between"
+            alignItems="stretch"
+            className={classes.container}
+          >
+            <Grid item>
+              <Hero home={home} name={profile.fullName} />
+            </Grid>
+            <Grid item>
+              <main>{children}</main>
+            </Grid>
+            <Grid item>
+              {!home && <BackToHome />}
+              <Footer />
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+      <ScrollToTop />
     </>
   );
 };

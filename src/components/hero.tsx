@@ -15,7 +15,7 @@ const useStyles = makeStyles({
   hero: {
     position: "relative",
     minHeight: "100vh",
-    padding: "3em 1em",
+    padding: "3em .5em",
   },
 
   hero__imagesContainer: {
