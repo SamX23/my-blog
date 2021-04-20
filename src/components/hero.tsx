@@ -30,14 +30,21 @@ const useStyles = makeStyles({
   hero__text: {
     margin: "auto",
     paddingLeft: "1em",
+    minWidth: "19rem",
     "& h1": {
       fontWeight: "bolder",
-      fontSize: "3rem",
+      fontSize: "2em",
+    },
+    "@media(max-width: 700px)": {
+      margin: "unset",
+      "& h1": {
+        fontSize: "1.5em",
+      },
     },
   },
 
   hero__NotHome: {
-    paddingTop: "2em",
+    padding: "2em",
     textAlign: "center",
     "& h2": {
       fontSize: "2.5rem",
