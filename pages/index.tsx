@@ -13,6 +13,7 @@ const useStyles = makeStyles({
     lineHeight: "2em",
     fontSize: "1.5rem",
     padding: "1rem",
+    textAlign: "justify",
   },
   container: {
     margin: "auto",
@@ -24,6 +25,11 @@ const useStyles = makeStyles({
   },
   gridItem: {
     padding: ".25rem",
+    "@media(max-width: 440px)": {
+      "& img": {
+        maxWidth: "20rem",
+      },
+    },
   },
 });
 
