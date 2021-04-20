@@ -6,6 +6,7 @@ import { ToggleThemeContext } from "../theme/themeProvider";
 import { darkColorPalette, lightColorPalette } from "../theme/theme";
 import { defaultTitle, profile } from "../mock/data";
 import { HeadTag, Navigation, Hero, BackToHome, Footer } from "./index";
+import ScrollToTop from "./scrollToTop";
 
 interface Props {
   children: React.ReactNode;
@@ -22,30 +23,28 @@ const Layout = ({ children, home, blog, siteTitle = defaultTitle }: Props) => {
         ? darkColorPalette.primary
         : lightColorPalette.primary,
       color: isDark ? darkColorPalette.text : lightColorPalette.text,
-    },
-    header: {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
+      minHeight: "100vh",
     },
   });
 
   const classes = useStyles();
   return (
-    <Grid container direction="column" className={classes.layout}>
+    <>
       <HeadTag siteTitle={siteTitle} />
       <Navigation blog={blog} />
-      <Container>
-        <header className={classes.header}>
+      <Container className={classes.layout}>
+        <Grid container direction="column">
           <Hero home={home} name={profile.fullName} />
-        </header>
 
-        <main>{children}</main>
+          <main>{children}</main>
 
-        {!home && <BackToHome />}
-        <Footer />
+          {!home && <BackToHome />}
+
+          <ScrollToTop />
+          <Footer />
+        </Grid>
       </Container>
-    </Grid>
+    </>
   );
 };
 
