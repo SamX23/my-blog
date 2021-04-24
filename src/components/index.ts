@@ -3,6 +3,8 @@ export { default as Navigation } from "./navigation";
 export { default as Hero } from "./hero";
 export { default as BackToHome } from "./backToHome";
 export { default as Footer } from "./footer";
+export { default as Layout } from "./layout";
+export { default as ProjectList } from "./projectList";
 export { default as themeButton } from "./themeButton";
 export { default as ProgressBar } from "./progressBar";
 export { default as ThemeButton } from "./themeButton";
