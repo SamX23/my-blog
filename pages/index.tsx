@@ -1,12 +1,8 @@
-import { useContext } from "react";
-import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
-import Layout from "../src/components/layout";
-import { darkColorPalette, lightColorPalette } from "../src/theme/theme";
-import { ToggleThemeContext } from "../src/theme/themeProvider";
-import { project } from "../src/mock/data";
+import { Layout } from "../src/components/index";
+import ProjectList from "../src/components/projectList";
 
 const useStyles = makeStyles({
   typography: {
@@ -35,8 +31,6 @@ const useStyles = makeStyles({
 
 const Home = () => {
   const classes = useStyles();
-  const { isDark } = useContext(ToggleThemeContext);
-  const cardTheme = isDark ? darkColorPalette.repo : lightColorPalette.repo;
 
   return (
     <>
@@ -58,22 +52,8 @@ const Home = () => {
               <a href="https://github.com/SamX23">Github Profile</a>.
             </Typography>
           </Grid>
-          <Grid container item className={classes.gridList}>
-            <Grid item>
-              <Box borderBottom={2} mb={2}>
-                <Typography variant="body1" className={classes.typography}>
-                  My recent project list:
-                </Typography>
-              </Box>
-              {project.repo.map((res) => (
-                <a key={res.id} href={res.link} className={classes.gridItem}>
-                  <img
-                    alt={res.name}
-                    src={project.githubLink(res.repo, cardTheme)}
-                  />
-                </a>
-              ))}
-            </Grid>
+          <Grid item>
+            <ProjectList />
           </Grid>
         </Grid>
       </Layout>
