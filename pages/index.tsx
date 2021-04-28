@@ -3,6 +3,7 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import { Layout } from "../src/components/index";
 import ProjectList from "../src/components/projectList";
+import EmbedPdf from "../src/components/pdfEmbed";
 
 const useStyles = makeStyles({
   typography: {
@@ -54,6 +55,9 @@ const Home = () => {
           </Grid>
           <Grid item>
             <ProjectList />
+          </Grid>
+          <Grid item xs>
+            <EmbedPdf />
           </Grid>
         </Grid>
       </Layout>
