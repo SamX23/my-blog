@@ -69,6 +69,17 @@ const options = (dark: boolean): ThemeOptions => {
             border: `.25rem dashed ${paletteColors.text} !important`,
             width: "100%",
           },
+          "*::-webkit-scrollbar-track": {
+            boxShadow: "inset 0 0 6px rgba(0, 0, 0, .5)",
+            backgroundColor: "#ffffff",
+          },
+          "*::-webkit-scrollbar": {
+            width: "1em",
+            backgroundColor: "#f5f5f5",
+          },
+          "*::-webkit-scrollbar-thumb": {
+            backgroundColor: paletteColors.secondary,
+          },
         },
       },
     },
