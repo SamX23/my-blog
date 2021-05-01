@@ -1,14 +1,47 @@
+import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+import Typography from "@material-ui/core/Typography";
 import { Layout } from "../src/components";
+import EmbedPdf from "../src/components/pdfEmbed";
 
-const about = () => (
-  <Layout>
-    <Grid container>
-      <Grid item>
-        <h1>About Page</h1>
-      </Grid>
-    </Grid>
-  </Layout>
-);
+const useStyles = makeStyles({
+  container: {
+    padding: "1.5rem 0",
+  },
+});
+
+const about = () => {
+  const aboutPage = "CV and Portfolio of Sami";
+  const classes = useStyles();
+
+  return (
+    <Layout noHero siteTitle={aboutPage}>
+      <Box mt={3}>
+        <Grid container className={classes.container}>
+          <Grid item xs={12}>
+            <Typography variant="h1">
+              <Box textAlign="center" borderBottom={2} pb={2}>
+                About Page
+              </Box>
+            </Typography>
+            <Typography variant="body1">
+              <Box p={2} textAlign="justify">
+                Hi, my name is Sami Kalammallah, some of you may find me on
+                internet as Sami Kalamallah (with single m), that&apos;s because
+                I use my false letter name long time without realise to fix it.
+                So, I officialy use my true names after I get married and having
+                kids.
+              </Box>
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <EmbedPdf />
+          </Grid>
+        </Grid>
+      </Box>
+    </Layout>
+  );
+};
 
 export default about;
