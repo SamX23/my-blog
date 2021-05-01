@@ -34,7 +34,7 @@ const Layout = ({ children, home, blog, siteTitle = defaultTitle }: Props) => {
   return (
     <>
       <HeadTag siteTitle={siteTitle} />
-      <Navigation blog={blog} />
+      <Navigation disable={blog} />
       <Box className={classes.layout}>
         <Container>
           <Grid
