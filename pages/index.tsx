@@ -3,7 +3,6 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import { Layout } from "../src/components/index";
 import ProjectList from "../src/components/projectList";
-import EmbedPdf from "../src/components/pdfEmbed";
 
 const useStyles = makeStyles({
   typography: {
@@ -16,17 +15,6 @@ const useStyles = makeStyles({
     margin: "auto",
     padding: "1rem 0",
     minHeight: "90vh",
-  },
-  gridList: {
-    textAlign: "center",
-  },
-  gridItem: {
-    padding: ".25rem",
-    "@media(max-width: 440px)": {
-      "& img": {
-        maxWidth: "20rem",
-      },
-    },
   },
 });
 
@@ -55,9 +43,6 @@ const Home = () => {
           </Grid>
           <Grid item>
             <ProjectList />
-          </Grid>
-          <Grid item xs>
-            <EmbedPdf />
           </Grid>
         </Grid>
       </Layout>
