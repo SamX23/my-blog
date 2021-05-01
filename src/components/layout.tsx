@@ -13,10 +13,17 @@ interface Props {
   children: React.ReactNode;
   home?: boolean;
   blog?: boolean;
+  noHero?: boolean;
   siteTitle?: string;
 }
 
-const Layout = ({ children, home, blog, siteTitle = defaultTitle }: Props) => {
+const Layout = ({
+  children,
+  home,
+  blog,
+  noHero,
+  siteTitle = defaultTitle,
+}: Props) => {
   const { isDark } = useContext(ToggleThemeContext);
   const useStyles = makeStyles({
     layout: {
@@ -44,9 +51,11 @@ const Layout = ({ children, home, blog, siteTitle = defaultTitle }: Props) => {
             alignItems="stretch"
             className={classes.container}
           >
-            <Grid item>
-              <Hero home={home} name={profile.fullName} />
-            </Grid>
+            {!noHero && (
+              <Grid item>
+                <Hero home={home} name={profile.fullName} />
+              </Grid>
+            )}
             <Grid item>
               <main>{children}</main>
             </Grid>
