@@ -1,3 +1,4 @@
+import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
@@ -25,7 +26,7 @@ const useStyles = makeStyles({
     bottom: 0,
     left: 0,
     right: 0,
-    marginBottom: 15,
+    paddingBottom: "1rem",
   },
 
   mouse: {
@@ -55,11 +56,11 @@ const useStyles = makeStyles({
 const ScrollToBottom = () => {
   const classes = useStyles();
   return (
-    <div className={classes.scrollBtn}>
+    <Box className={classes.scrollBtn}>
       <a href="#content" className={classes.mouse}>
         <span className={classes.mouseButton}>&nbsp;</span>
       </a>
-    </div>
+    </Box>
   );
 };
 

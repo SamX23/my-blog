@@ -8,10 +8,10 @@ import { ToggleThemeContext } from "../theme/themeProvider";
 import { darkColorPalette, lightColorPalette } from "../theme/theme";
 
 interface Props {
-  blog?: boolean;
+  disable?: boolean;
 }
 
-const Navigation = ({ blog }: Props) => {
+const Navigation = ({ disable }: Props) => {
   const { isDark } = useContext(ToggleThemeContext);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
@@ -72,7 +72,7 @@ const Navigation = ({ blog }: Props) => {
 
   return (
     <>
-      {!blog && (
+      {!disable && (
         <nav className={classes.nav__Bar} id="navbar">
           <ProgressBar />
           <Container

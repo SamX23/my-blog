@@ -4,15 +4,10 @@ Hi, I challenge myself to create a website using most updated techstack and rigi
 
 ### To do
 
-- React Context
-- Theming switch for dark and light
-- PWA
-- Shows up on google !
-- Github API
-- Animation
-- Profile
+- Profile (Common information, certificate and sosmed)
+- PWA ?
+- More animation ?
 - GraphQL ?
-- Add license
 
 ### License
 

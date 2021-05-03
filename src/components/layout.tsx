@@ -11,12 +11,21 @@ import ScrollToTop from "./scrollToTop";
 
 interface Props {
   children: React.ReactNode;
+  noContainer?: boolean;
   home?: boolean;
   blog?: boolean;
+  noHero?: boolean;
   siteTitle?: string;
 }
 
-const Layout = ({ children, home, blog, siteTitle = defaultTitle }: Props) => {
+const Layout = ({
+  children,
+  home,
+  blog,
+  noHero,
+  noContainer,
+  siteTitle = defaultTitle,
+}: Props) => {
   const { isDark } = useContext(ToggleThemeContext);
   const useStyles = makeStyles({
     layout: {
@@ -34,28 +43,36 @@ const Layout = ({ children, home, blog, siteTitle = defaultTitle }: Props) => {
   return (
     <>
       <HeadTag siteTitle={siteTitle} />
-      <Navigation blog={blog} />
+      <Navigation disable={blog} />
       <Box className={classes.layout}>
-        <Container>
-          <Grid
-            container
-            direction="column"
-            justify="space-between"
-            alignItems="stretch"
-            className={classes.container}
-          >
+        <Grid
+          container
+          direction="column"
+          justify="space-between"
+          alignItems="stretch"
+          className={classes.container}
+        >
+          {!noHero && (
             <Grid item>
               <Hero home={home} name={profile.fullName} />
             </Grid>
-            <Grid item>
+          )}
+          <Grid item>
+            {noContainer ? (
               <main>{children}</main>
-            </Grid>
-            <Grid item>
+            ) : (
+              <Container>
+                <main>{children}</main>
+              </Container>
+            )}
+          </Grid>
+          <Grid item>
+            <Container>
               {!home && <BackToHome />}
               <Footer />
-            </Grid>
+            </Container>
           </Grid>
-        </Container>
+        </Grid>
       </Box>
       <ScrollToTop />
     </>

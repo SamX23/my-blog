@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
+import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import ScrollToBottom from "./scrollToBottom";
@@ -16,6 +17,11 @@ const useStyles = makeStyles({
     position: "relative",
     minHeight: "100vh",
     padding: "3em .5em",
+    display: "flex",
+
+    "& div": {
+      margin: "auto",
+    },
   },
 
   hero__imagesContainer: {
@@ -62,25 +68,34 @@ const Hero = ({ home, name }: Props) => {
     <>
       {home ? (
         <>
-          <Grid container className={classes.hero}>
-            <Grid item className={classes.hero__imagesContainer}>
-              <Image
-                priority
-                src="/images/profile.jpg"
-                alt={name}
-                className={classes.hero__images}
-                width={250}
-                height={250}
-              />
-            </Grid>
-            <Grid item xs className={classes.hero__text}>
-              <Typography variant="h1">
-                Hi! <span>👋</span> I&apos;m {name} a highly motivated
-                self-taugh <span>🕸</span> developer.
-              </Typography>
-            </Grid>
+          <Box className={classes.hero}>
+            <Container>
+              <Grid
+                container
+                direction="column"
+                justify="center"
+                alignItems="center"
+              >
+                <Grid item className={classes.hero__imagesContainer}>
+                  <Image
+                    priority
+                    src="/images/profile.jpg"
+                    alt={name}
+                    className={classes.hero__images}
+                    width={250}
+                    height={250}
+                  />
+                </Grid>
+                <Grid item xs className={classes.hero__text}>
+                  <Typography variant="h1">
+                    <span>👋</span> {name}, a highly motivated self-taugh{" "}
+                    <span>🕸</span> developer.
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Container>
             <ScrollToBottom />
-          </Grid>
+          </Box>
           <hr />
         </>
       ) : (
