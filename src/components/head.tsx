@@ -53,8 +53,8 @@ const HeadTag = ({ siteTitle }: Props) => {
         content="nWaKNPg87UzU3zONVNwXr_dzHzBfS35RS-hceGJaxJk"
         key="google-site-verification"
       />
-      <link rel="icon" href="/favicon.ico" key="icon" />
-      <link rel="apple-touch-icon" href="favicon.ico" key="apple-touch-icon" />
+      <link rel="icon" href="/icon.svg" key="icon" />
+      <link rel="apple-touch-icon" href="icon.svg" key="apple-touch-icon" />
       <title>{siteTitle}</title>
     </Head>
   );
