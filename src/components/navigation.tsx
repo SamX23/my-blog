@@ -87,11 +87,16 @@ const Navigation = ({ disable }: Props) => {
               className={classes.nav__Menu}
             >
               {/* <Link href="/github"> */}
-              <Grid item xs={5}>
+              <Grid item xs>
                 <a href="https://github.com/samx23">Github</a>
               </Grid>
               {/* </Link> */}
-              <Grid item xs={5}>
+              <Grid item xs>
+                <Link href="/about">
+                  <a>About</a>
+                </Link>
+              </Grid>
+              <Grid item xs>
                 <Link href="/blog">
                   <a>Blog</a>
                 </Link>
