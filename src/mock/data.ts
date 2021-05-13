@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 
-export const defaultTitle = "Sami Kalammallah Blog";
+export const defaultTitle: string = "Sami Kalammallah Blog";
 
 export const profile = {
   fullName: "Sami Kalammallah",
