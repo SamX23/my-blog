@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
-import { Layout } from "../src/components";
+import { Layout, ProjectList } from "../src/components";
 import EmbedPdf from "../src/components/pdfEmbed";
 
 const useStyles = makeStyles({
@@ -34,6 +34,9 @@ const about = () => {
                 kids.
               </Box>
             </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <ProjectList />
           </Grid>
           <Grid item xs={12}>
             <EmbedPdf />
