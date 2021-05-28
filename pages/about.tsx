@@ -3,7 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
-import { Layout as Main } from "../src/components";
+import { Layout as Main, ProjectList } from "../src/components";
 import EmbedPdf from "../src/components/pdfEmbed";
 
 const useStyles = makeStyles({
@@ -91,6 +91,8 @@ const about = () => {
                 kids.
               </Box>
             </Typography>
+
+            <ProjectList />
             <EmbedPdf />
           </Container>
         </Grid>
