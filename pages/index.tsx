@@ -2,7 +2,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import { Layout } from "../src/components/index";
-import ProjectList from "../src/components/projectList";
 
 const useStyles = makeStyles({
   typography: {
@@ -14,7 +13,6 @@ const useStyles = makeStyles({
   container: {
     margin: "auto",
     padding: "1rem 0",
-    minHeight: "90vh",
   },
 });
 
@@ -40,9 +38,6 @@ const Home = () => {
               look on my project on{" "}
               <a href="https://github.com/SamX23">Github Profile</a>.
             </Typography>
-          </Grid>
-          <Grid item>
-            <ProjectList />
           </Grid>
         </Grid>
       </Layout>
