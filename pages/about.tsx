@@ -27,11 +27,10 @@ const about = () => {
             </Typography>
             <Typography variant="body1">
               <Box p={2} textAlign="justify">
-                Hi, my name is Sami Kalammallah, some of you may find me on
+                Hi, my name is Sami Kalammallah, some of you may find me on the
                 internet as Sami Kalamallah (with single m), that&apos;s because
-                I use my false letter name long time without realise to fix it.
-                So, I officialy use my true names after I get married and having
-                kids.
+                I use my false letter name long time without realizing to fix
+                it. So, I officially use my true names after I got married.
               </Box>
             </Typography>
           </Grid>
