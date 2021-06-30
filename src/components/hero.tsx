@@ -88,8 +88,7 @@ const Hero = ({ home, name }: Props) => {
                 </Grid>
                 <Grid item xs className={classes.hero__text}>
                   <Typography variant="h1">
-                    <span>👋</span> {name}, a highly motivated self-taugh{" "}
-                    <span>🕸</span> developer.
+                    <span>👋</span> {name} a <span>🕸</span> developer.
                   </Typography>
                 </Grid>
               </Grid>

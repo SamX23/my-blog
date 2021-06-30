@@ -86,11 +86,6 @@ const Navigation = ({ disable }: Props) => {
               alignItems="center"
               className={classes.nav__Menu}
             >
-              {/* <Link href="/github"> */}
-              <Grid item xs>
-                <a href="https://github.com/samx23">Github</a>
-              </Grid>
-              {/* </Link> */}
               <Grid item xs>
                 <Link href="/about">
                   <a>About</a>
