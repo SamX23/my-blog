@@ -6,6 +6,7 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import ScrollToBottom from "./scrollToBottom";
+import TypedText from "./typed";
 
 type Props = {
   home?: boolean;
@@ -88,7 +89,15 @@ const Hero = ({ home, name }: Props) => {
                 </Grid>
                 <Grid item xs className={classes.hero__text}>
                   <Typography variant="h1">
-                    <span>👋</span> {name} a <span>🕸</span> developer.
+                    <span>👋</span> {name}{" "}
+                    <TypedText
+                      arrayText={[
+                        "a front-end developer",
+                        "a tech-savvy",
+                        "and a great father",
+                      ]}
+                    />
+                    .
                   </Typography>
                 </Grid>
               </Grid>
