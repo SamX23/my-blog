@@ -13,8 +13,7 @@ const useStyles = makeStyles({
 
   baseCover: {
     width: "100%",
-    minHeight: "40rem",
-    backgroundColor: "blue",
+    minHeight: "30rem",
     "& > div": {
       minHeight: "inherit",
     },
@@ -24,7 +23,9 @@ const useStyles = makeStyles({
     width: "100%",
     height: "25rem",
     position: "relative",
-    background: "red",
+    backgroundImage: "url('/images/profile-bg.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
     borderRadius: "0 0 1rem 1rem",
     "& img": {
       width: "15rem",
@@ -40,15 +41,18 @@ const useStyles = makeStyles({
 
   gridCover: {
     display: "grid",
-    gridTemplateRows: "repeat(3, 5rem)",
+    gridTemplateRows: "repeat(3, 2rem)",
     gridGap: "1rem",
     justifyItems: "center",
     padding: "1rem 1rem",
   },
+  profileText: {
+    textAlign: "justify",
+  },
 });
 
 const about = () => {
-  const aboutPage = "CV and Portfolio of Sami";
+  const aboutPage = "About Sami";
   const classes = useStyles();
 
   return (
@@ -66,31 +70,22 @@ const about = () => {
                 justify="center"
                 alignItems="center"
               >
-                <Grid item xs={6} className={classes.gridCover}>
-                  <button type="submit">test1</button>
-                  <button type="submit">test1</button>
-                  <button type="submit">test1</button>
-                </Grid>
-                <Grid item xs={6} className={classes.gridCover}>
-                  <button type="submit">test1</button>
-                  <button type="submit">test1</button>
-                  <button type="submit">test1</button>
-                </Grid>
+                <Grid item xs={6} className={classes.gridCover} />
+                <Grid item xs={6} className={classes.gridCover} />
               </Grid>
             </Container>
           </Box>
         </Grid>
         <Grid item xs={12}>
           <Container>
-            <Typography variant="body1">
-              <Box p={2} textAlign="justify">
+            <Box py={2} className={classes.profileText}>
+              <Typography variant="h4">
                 Hi, my name is Sami Kalammallah, some of you may find me on the
                 internet as Sami Kalamallah (with single m), that&apos;s because
                 I use my false letter name long time without realizing to fix
                 it. So, I officially use my true names after I got married.
-              </Box>
-            </Typography>
-
+              </Typography>
+            </Box>
             <ProjectList />
             <EmbedPdf />
           </Container>

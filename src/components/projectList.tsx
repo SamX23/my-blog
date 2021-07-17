@@ -11,6 +11,7 @@ const useStyles = makeStyles({
   typography: {
     lineHeight: "2em",
     fontSize: "1.5rem",
+    fontWeight: "bold",
     textAlign: "justify",
   },
   gridList: {
@@ -39,7 +40,7 @@ const ProjectList = () => {
   return (
     <Grid container direction="column">
       <Grid item>
-        <Typography variant="h2" className={classes.typography}>
+        <Typography variant="h3" className={classes.typography}>
           PROJECT LIST:
         </Typography>
         <hr />

@@ -29,8 +29,8 @@ const Home = () => {
               className={classes.typography}
               id="content"
             >
-              Finally a Front-End Developer (🔥Yeaaahh !!!) at Kirim.email,
-              still loving the most fast paced tech stack on earth,{" "}
+              Finally a Front-End Developer (🔥Yeaaahh !!!) at Utas.Co, still
+              loving the most fast paced tech stack on earth,{" "}
               <a href="https://reactjs.org/">React</a>. Found my self enjoy
               coding and develop things, I also have developed personal project
               on github, notes that this blog created using{" "}
