@@ -29,14 +29,13 @@ const Home = () => {
               className={classes.typography}
               id="content"
             >
-              Finally a Front-End Developer (🔥Yeaaahh !!!) at Utas.Co, still
-              loving the most fast paced tech stack on earth,{" "}
+              Currently a Front-End Developer at Utas.Co, loving the most fast
+              paced tech stack on earth,{" "}
               <a href="https://reactjs.org/">React</a>. Found my self enjoy
-              coding and develop things, I also have developed personal project
-              on github, notes that this blog created using{" "}
+              coding and develop things, this blog is created using{" "}
               <a href="https://nextjs.org/">Next</a> and{" "}
-              <a href="https://www.typescriptlang.org/">Typescript</a>. Have a
-              look on my project at <a href="/about">Github</a>.
+              <a href="https://www.typescriptlang.org/">Typescript</a>. Checkout
+              my personal project on <a href="/about">Github</a>.
             </Typography>
           </Grid>
         </Grid>
