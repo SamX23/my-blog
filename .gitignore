@@ -3,3 +3,6 @@ node_modules
 .prettierrc.json
 
 yarn.lock
+.yarn
+yarn-error.log
+.yarnrc.yml
