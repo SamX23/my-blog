@@ -7,7 +7,7 @@ const EmbedPdf = () => (
       <Typography variant="h4">My Resume</Typography>
     </Box>
     <embed
-      src="./resume.pdf"
+      src="./files/resume.pdf"
       width="100%"
       height="500px"
       type="application/pdf"
