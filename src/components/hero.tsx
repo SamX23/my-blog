@@ -74,7 +74,7 @@ const Hero = ({ home, name }: Props) => {
               <Grid
                 container
                 direction="column"
-                justify="center"
+                justifyContent="center"
                 alignItems="center"
               >
                 <Grid item className={classes.hero__imagesContainer}>

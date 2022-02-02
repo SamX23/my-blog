@@ -48,7 +48,7 @@ const Layout = ({
         <Grid
           container
           direction="column"
-          justify="space-between"
+          justifyContent="space-between"
           alignItems="stretch"
           className={classes.container}
         >

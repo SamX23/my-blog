@@ -57,7 +57,11 @@ const ScrollToBottom = () => {
   const classes = useStyles();
   return (
     <Box className={classes.scrollBtn}>
-      <a href="#content" className={classes.mouse}>
+      <a
+        href="#content"
+        className={classes.mouse}
+        aria-label="scroll to bottom"
+      >
         <span className={classes.mouseButton}>&nbsp;</span>
       </a>
     </Box>

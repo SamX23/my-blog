@@ -42,7 +42,7 @@ const Footer = () => {
         className={classes.footer_Bar}
         container
         direction="row"
-        justify="space-between"
+        justifyContent="space-between"
         alignItems="center"
       >
         <Grid item xs className={classes.footer_author}>

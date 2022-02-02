@@ -1,4 +1,4 @@
-import { createMuiTheme, ThemeOptions } from "@material-ui/core/styles";
+import { createTheme, ThemeOptions } from "@material-ui/core/styles";
 
 // Color pallete modified from https://colorhunt.co/palette/225739
 // rgba(236, 236, 228, 1)
@@ -14,8 +14,8 @@ export const darkColorPalette = {
   link: "rgba(0, 231, 239, 1)",
   linkHover: "rgba(96, 182, 243,1)",
   loadingBar: "rgba(0, 136, 145, 1)",
-  repo: "nord",
 };
+
 export const lightColorPalette = {
   primary: "rgba(236, 236, 228, 1)",
   secondary: "rgba(0, 136, 145, 1)",
@@ -23,7 +23,6 @@ export const lightColorPalette = {
   link: "rgba(0, 88, 122, 1)",
   linkHover: "rgba(96, 182, 243,1)",
   loadingBar: "rgba(0, 88, 122, 1)",
-  repo: "prussian",
 };
 
 const options = (dark: boolean): ThemeOptions => {
@@ -86,5 +85,5 @@ const options = (dark: boolean): ThemeOptions => {
   };
 };
 
-export const darkTheme = createMuiTheme(options(false));
-export const lightTheme = createMuiTheme(options(true));
+export const darkTheme = createTheme(options(false));
+export const lightTheme = createTheme(options(true));

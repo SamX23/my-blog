@@ -67,7 +67,7 @@ const about = () => {
               <Grid
                 container
                 direction="row"
-                justify="center"
+                justifyContent="center"
                 alignItems="center"
               >
                 <Grid item xs={6} className={classes.gridCover} />
