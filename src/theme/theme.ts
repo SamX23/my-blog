@@ -14,6 +14,7 @@ export const darkColorPalette = {
   link: "rgba(0, 231, 239, 1)",
   linkHover: "rgba(96, 182, 243,1)",
   loadingBar: "rgba(0, 136, 145, 1)",
+  repo: "nord",
 };
 
 export const lightColorPalette = {
@@ -23,6 +24,7 @@ export const lightColorPalette = {
   link: "rgba(0, 88, 122, 1)",
   linkHover: "rgba(96, 182, 243,1)",
   loadingBar: "rgba(0, 88, 122, 1)",
+  repo: "prussian",
 };
 
 const options = (dark: boolean): ThemeOptions => {
