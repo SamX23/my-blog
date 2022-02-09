@@ -1,11 +1,6 @@
 import { createTheme, ThemeOptions } from "@material-ui/core/styles";
 
 // Color pallete modified from https://colorhunt.co/palette/225739
-// rgba(236, 236, 228, 1)
-// rgba(0, 231, 239, 1)
-// rgba(0, 136, 145, 1)
-// rgba(0, 88, 122, 1)
-// rgba(15, 48, 87, 1)
 
 export const darkColorPalette = {
   primary: "rgba(15, 48, 87, 1)",
