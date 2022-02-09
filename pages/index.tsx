@@ -28,9 +28,9 @@ const Home = () => {
             className={classes.typography}
             id="content"
           >
-            Currently a Front-End Developer at Utas.Co, loving the most fast
+            Currently a Frontend Developer at Utas.Co, loving the most fast
             paced tech stack on earth, <a href="https://reactjs.org/">React</a>.
-            Found my self enjoy coding and develop things, this blog is created
+            Found my self enjoy coding, playing games and being a father, this blog is created
             using <a href="https://nextjs.org/">Next</a> and{" "}
             <a href="https://www.typescriptlang.org/">Typescript</a>. Checkout
             my personal project on <a href="/about">Github</a>.
