@@ -80,10 +80,7 @@ const about = () => {
           <Container>
             <Box py={2} className={classes.profileText}>
               <Typography variant="h4">
-                Hi, my name is Sami Kalammallah, some of you may find me on the
-                internet as Sami Kalamallah (with single m), that&apos;s because
-                I use my false letter name long time without realizing to fix
-                it. So, I officially use my true names after I got married.
+                Hi, my name is Sami Kalammallah and that's all you need to know
               </Typography>
             </Box>
             <ProjectList />
