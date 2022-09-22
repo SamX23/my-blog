@@ -84,7 +84,6 @@ const about = () => {
               </Typography>
             </Box>
             <ProjectList />
-            <EmbedPdf />
           </Container>
         </Grid>
       </Grid>
