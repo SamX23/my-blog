@@ -131,12 +131,5 @@ export const project = {
       link: "https://github.com/SamX23/binar-chapter-4",
       tech: "htmlcssjs",
     },
-    {
-      id: nanoid(),
-      name: "Babastudio ecommerce",
-      repo: "ecommerce-basic",
-      link: "https://github.com/SamX23/ecommerce-basic",
-      tech: "htmlcssjs",
-    },
   ],
 };
