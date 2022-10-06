@@ -1,31 +1,27 @@
 # Sami's Ultimate Blog
 
-Hi, I challenge myself to create a website using most updated techstack and rigid code using Next js, typescript and material-ui(at the moment). I will try to optimize the website as far as I learn and implement many things that can deliver this website to the best I ever created.
+Hi, I challenge myself to create a website using most updated stack at the moment (2020) and rigid code using Next js, typescript and material-ui(at the moment). I will try to optimize the website as far as I learn and implement many things that can deliver this website to the best I ever created at that moment (2020).
 
 ## Development
 
-I recommend using [yarn](https://yarnpkg.com/) with node version >= 14.0.0
-
 ```bash
 # install dependencies
-yarn
+npm run
 
 # serve with hot reload for development
-yarn dev
+npm run dev
 
 # build for production
-yarn build
+npm run build
 
 # run check (prettier check)
-yarn format
+npm run format
 ```
 
 ## To do
 
-- Profile (Common information, certificate and sosmed)
-- PWA ?
-- More animation ?
-- GraphQL ?
+- Gonna be upgraded into blog v2
+- Not gonna have feature update for this repository
 
 ## Credits & License
 
