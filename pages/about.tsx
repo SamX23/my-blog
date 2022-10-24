@@ -51,7 +51,7 @@ const useStyles = makeStyles({
   },
 });
 
-const about = () => {
+const About = () => {
   const aboutPage = "About Sami";
   const classes = useStyles();
 
@@ -80,7 +80,8 @@ const about = () => {
           <Container>
             <Box py={2} className={classes.profileText}>
               <Typography variant="h4">
-                Hi, my name is Sami Kalammallah and that's all you need to know
+                Hi, my name is Sami Kalammallah and that&apos;s all you need to
+                know.
               </Typography>
             </Box>
             <ProjectList />
@@ -91,4 +92,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;

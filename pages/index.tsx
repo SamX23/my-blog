@@ -2,6 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import { Layout } from "../src/components/index";
+import Link from "next/link";
 
 const useStyles = makeStyles({
   typography: {
@@ -28,12 +29,25 @@ const Home = () => {
             className={classes.typography}
             id="content"
           >
-            Currently a Frontend Developer at Utas.Co, loving the most fast
-            paced tech stack on earth, <a href="https://reactjs.org/">React</a>.
-            Found my self enjoy coding, playing games and being a father, this blog is created
-            using <a href="https://nextjs.org/">Next</a> and{" "}
-            <a href="https://www.typescriptlang.org/">Typescript</a>. Checkout
-            my personal project on <a href="/about">Github</a>.
+            Currently a Software Engineer focused on frontend role, loving the
+            most fast paced tech stack on earth,{" "}
+            <a href="https://reactjs.org/" target="_blank" rel="noreferrer">
+              React
+            </a>
+            . Found my self enjoy coding, playing games and being a father, this
+            blog is created using{" "}
+            <a href="https://nextjs.org/" target="_blank" rel="noreferrer">
+              Next
+            </a>{" "}
+            and{" "}
+            <a
+              href="https://www.typescriptlang.org/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Typescript
+            </a>
+            . Checkout my personal project on <Link href="/about">Github</Link>.
           </Typography>
         </Grid>
       </Grid>

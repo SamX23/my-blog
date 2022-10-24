@@ -20,7 +20,7 @@ const TypedText = ({ arrayText }: { arrayText: Array<string> }) => {
     return () => {
       typedtext.current.destroy();
     };
-  }, []);
+  }, [arrayText]);
 
   return <span ref={element}>{null}</span>;
 };

@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
-import { useContext, useEffect } from "react";
+import { useCallback, useContext, useEffect } from "react";
 import { darkColorPalette, lightColorPalette } from "../theme/theme";
 import { ToggleThemeContext } from "../theme/themeProvider";
 
@@ -21,7 +21,7 @@ const ProgressBar = () => {
   });
 
   const classes = useStyles();
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
     const height =
@@ -29,7 +29,7 @@ const ProgressBar = () => {
       document.documentElement.clientHeight;
     const scrolled = (winScroll / height) * 100;
     document.getElementById("myBar").style.width = `${scrolled}%`;
-  };
+  }, []);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
