@@ -10,7 +10,6 @@ export const profile = {
 
 export const contact = {
   email: "skalexsong@gmail.com",
-  phone: "+6289657511134",
 };
 
 export const socialMedia = {

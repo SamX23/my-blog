@@ -28,6 +28,9 @@ const Navigation = ({ disable }: Props) => {
       left: 0,
       right: 0,
       transition: "top 0.5s",
+      backgroundColor: isDark
+        ? darkColorPalette.primary
+        : lightColorPalette.primary,
     },
 
     nav__Menu: {
@@ -76,6 +79,7 @@ const Navigation = ({ disable }: Props) => {
         <nav className={classes.nav__Bar} id="navbar">
           <ProgressBar />
           <Container
+            maxWidth="xl"
             className={classes.nav__Container}
             style={{ top: visible ? "0" : "-60px" }}
           >
