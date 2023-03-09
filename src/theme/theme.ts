@@ -13,12 +13,12 @@ export const darkColorPalette = {
 };
 
 export const lightColorPalette = {
-  primary: "rgba(236, 236, 228, 1)",
-  secondary: "rgba(0, 136, 145, 1)",
-  text: "rgba(15, 48, 87, 1)",
-  link: "rgba(0, 88, 122, 1)",
-  linkHover: "rgba(96, 182, 243,1)",
-  loadingBar: "rgba(0, 88, 122, 1)",
+  primary: "rgb(203, 228, 222)",
+  secondary: "rgb(14, 131, 136)",
+  text: "rgb(44, 51, 51)",
+  link: "rgb(46, 79, 79)",
+  linkHover: "rgb(44, 51, 51)",
+  loadingBar: "rgb(46, 79, 79)",
   repo: "prussian",
 };
 
