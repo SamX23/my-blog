@@ -39,6 +39,11 @@ export const socialMedia = {
       name: "Email",
       url: "mailto:skalexsong@gmail.com",
     },
+    {
+      id: nanoid(),
+      name: "MonkeyType",
+      url: "https://monkeytype.com/profile/samx23",
+    },
   ],
 };
 
@@ -46,6 +51,13 @@ export const project = {
   githubLink: (repo, theme) =>
     `https://github-readme-stats.vercel.app/api/pin/?username=samx23&repo=${repo}&theme=${theme}`,
   repo: [
+    {
+      id: nanoid(),
+      name: "Food Order App",
+      repo: "food-order-app",
+      link: "https://github.com/SamX23/food-order-app",
+      tech: "htmlcssjs",
+    },
     {
       id: nanoid(),
       name: "Random Ayah Generator",
@@ -59,6 +71,13 @@ export const project = {
       repo: "group-chat-app",
       link: "https://github.com/SamX23/group-chat-app",
       tech: "react",
+    },
+    {
+      id: nanoid(),
+      name: "Personal Website",
+      repo: "my-blog",
+      link: "https://github.com/SamX23/my-blog",
+      tech: "nextjs",
     },
     {
       id: nanoid(),
@@ -97,13 +116,6 @@ export const project = {
     },
     {
       id: nanoid(),
-      name: "Personal Website",
-      repo: "my-blog",
-      link: "https://github.com/SamX23/my-blog",
-      tech: "nextjs",
-    },
-    {
-      id: nanoid(),
       name: "Landing Page Shoes Shop",
       repo: "landing-page-sepatu",
       link: "https://github.com/SamX23/landing-page-sepatu",
@@ -121,13 +133,6 @@ export const project = {
       name: "Delicious Dish",
       repo: "dicoding-front-end-expert-2",
       link: "https://github.com/SamX23/dicoding-front-end-expert-2",
-      tech: "htmlcssjs",
-    },
-    {
-      id: nanoid(),
-      name: "Javascript Games",
-      repo: "binar-chapter-4",
-      link: "https://github.com/SamX23/binar-chapter-4",
       tech: "htmlcssjs",
     },
   ],
