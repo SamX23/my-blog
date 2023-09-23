@@ -56,7 +56,7 @@ export const project = {
       name: "Food Order App",
       repo: "food-order-app",
       link: "https://github.com/SamX23/food-order-app",
-      tech: "htmlcssjs",
+      tech: "nextjs",
     },
     {
       id: nanoid(),
