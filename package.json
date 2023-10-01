@@ -10,8 +10,11 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@material-ui/core": "^4.12.3",
-    "@material-ui/icons": "^4.11.2",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "5.14.13",
+    "@mui/material": "^5.14.13",
+    "@mui/styles": "^5.14.13",
     "date-fns": "^2.16.1",
     "gray-matter": "^4.0.2",
     "nanoid": "^3.1.22",
