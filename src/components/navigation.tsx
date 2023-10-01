@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { useCallback, useContext, useEffect, useState } from "react";
-import Grid from "@material-ui/core/Grid";
-import Container from "@material-ui/core/Container";
-import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@mui/material/Grid";
+import Container from "@mui/material/Container";
+import makeStyles from "@mui/styles/makeStyles";
 import { ProgressBar, ThemeButton } from "./index";
 import { ToggleThemeContext } from "../theme/themeProvider";
 import { darkColorPalette, lightColorPalette } from "../theme/theme";
@@ -91,14 +91,10 @@ const Navigation = ({ disable }: Props) => {
               className={classes.nav__Menu}
             >
               <Grid item xs>
-                <Link href="/about">
-                  <a>About</a>
-                </Link>
+                <Link href="/about">About</Link>
               </Grid>
               <Grid item xs>
-                <Link href="/blog">
-                  <a>Blog</a>
-                </Link>
+                <Link href="/blog">Blog</Link>
               </Grid>
               <Grid item xs={2}>
                 <ThemeButton />

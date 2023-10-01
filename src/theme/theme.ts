@@ -1,4 +1,8 @@
-import { createTheme, ThemeOptions } from "@material-ui/core/styles";
+import {
+  createTheme,
+  DeprecatedThemeOptions,
+  adaptV4Theme,
+} from "@mui/material/styles";
 
 // Color pallete modified from https://colorhunt.co/palette/225739
 
@@ -22,11 +26,11 @@ export const lightColorPalette = {
   repo: "prussian",
 };
 
-const options = (dark: boolean): ThemeOptions => {
+const options = (dark: boolean): DeprecatedThemeOptions => {
   const paletteColors = dark ? darkColorPalette : lightColorPalette;
   return {
     palette: {
-      type: dark ? "dark" : "light",
+      mode: dark ? "dark" : "light",
       primary: {
         main: paletteColors.primary,
       },
@@ -82,5 +86,5 @@ const options = (dark: boolean): ThemeOptions => {
   };
 };
 
-export const darkTheme = createTheme(options(false));
-export const lightTheme = createTheme(options(true));
+export const darkTheme = createTheme(adaptV4Theme(options(false)));
+export const lightTheme = createTheme(adaptV4Theme(options(true)));

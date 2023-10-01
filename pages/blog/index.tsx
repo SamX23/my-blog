@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { GetStaticProps } from "next";
-import { makeStyles } from "@material-ui/core/styles";
+import makeStyles from "@mui/styles/makeStyles";
 import { getSortedPostsData } from "../../src/components/lib/posts";
 import DateFormatter from "../../src/components/dateFormatter";
 import Layout from "../../src/components/layout";
@@ -36,11 +36,9 @@ const Blog = ({ allPostsData }: Props) => {
       <section className={classes.container}>
         <h2 className={classes.title}>Blog</h2>
         <ul>
-          {allPostsData.map(({ id, date, title }) => (
-            <li key={id}>
-              <Link href={`/blog/${id}`}>
-                <a>{title}</a>
-              </Link>
+          {allPostsData?.map(({ id, date, title }, index) => (
+            <li key={index}>
+              <Link href={`/blog/${id}`}>{title}</Link>
               <br />
               <small>
                 <DateFormatter dateString={date} />

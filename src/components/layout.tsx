@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import Box from "@material-ui/core/Box";
-import Grid from "@material-ui/core/Grid";
-import Container from "@material-ui/core/Container";
-import { makeStyles } from "@material-ui/core/styles";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import Container from "@mui/material/Container";
+import makeStyles from "@mui/styles/makeStyles";
 import { ToggleThemeContext } from "../theme/themeProvider";
 import { darkColorPalette, lightColorPalette } from "../theme/theme";
 import { defaultTitle, profile } from "../mock/data";

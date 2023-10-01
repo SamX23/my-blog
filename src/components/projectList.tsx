@@ -1,11 +1,12 @@
 import { useContext } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
-import Typography from "@material-ui/core/Typography";
+import makeStyles from "@mui/styles/makeStyles";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 import { ToggleThemeContext } from "../theme/themeProvider";
 import { darkColorPalette, lightColorPalette } from "../theme/theme";
 import { project } from "../mock/data";
+import Image from "next/image";
 
 const useStyles = makeStyles({
   typography: {
@@ -55,7 +56,7 @@ const ProjectList = () => {
             .filter((x) => x.tech === "nextjs")
             .map((res) => (
               <a key={res.id} href={res.link} className={classes.gridItem}>
-                <img
+                <Image
                   alt={res.name}
                   src={project.githubLink(res.repo, cardTheme)}
                 />
@@ -73,7 +74,7 @@ const ProjectList = () => {
             .filter((x) => x.tech === "react")
             .map((res) => (
               <a key={res.id} href={res.link} className={classes.gridItem}>
-                <img
+                <Image
                   alt={res.name}
                   src={project.githubLink(res.repo, cardTheme)}
                 />
@@ -91,7 +92,7 @@ const ProjectList = () => {
             .filter((x) => x.tech === "htmlcssjs")
             .map((res) => (
               <a key={res.id} href={res.link} className={classes.gridItem}>
-                <img
+                <Image
                   alt={res.name}
                   src={project.githubLink(res.repo, cardTheme)}
                 />

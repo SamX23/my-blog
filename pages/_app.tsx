@@ -1,6 +1,6 @@
 import type { AppProps } from "next/app";
 import { useEffect } from "react";
-import CssBaseline from "@material-ui/core/CssBaseline";
+import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "../src/theme/themeProvider";
 
 function App({ Component, pageProps }: AppProps) {

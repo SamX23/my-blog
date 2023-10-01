@@ -7,7 +7,7 @@ import Document, {
   NextScript,
   DocumentContext,
 } from "next/document";
-import { ServerStyleSheets } from "@material-ui/core/styles";
+import ServerStyleSheets from "@mui/styles/ServerStyleSheets";
 
 export default class MyDocument extends Document {
   render() {

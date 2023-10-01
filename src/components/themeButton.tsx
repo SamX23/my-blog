@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { Button } from "@material-ui/core";
-import Tooltip from "@material-ui/core/Tooltip";
-import WbSunnyIcon from "@material-ui/icons/WbSunny";
-import Brightness3Icon from "@material-ui/icons/Brightness3";
+import { Button } from "@mui/material";
+import Tooltip from "@mui/material/Tooltip";
+import WbSunnyIcon from "@mui/icons-material/WbSunny";
+import Brightness3Icon from "@mui/icons-material/Brightness3";
 import { ToggleThemeContext } from "../theme/themeProvider";
 
 const ThemeButton = () => {

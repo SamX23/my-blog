@@ -1,5 +1,5 @@
 import { GetStaticProps, GetStaticPaths } from "next";
-import { makeStyles } from "@material-ui/core/styles";
+import makeStyles from "@mui/styles/makeStyles";
 import Layout from "../../src/components/layout";
 import { getAllPostIds, getPostData } from "../../src/components/lib/posts";
 import DateFormatter from "../../src/components/dateFormatter";

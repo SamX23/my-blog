@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { makeStyles } from "@material-ui/core/styles";
+import makeStyles from "@mui/styles/makeStyles";
 
 const useStyles = makeStyles({
   backToHome: {
@@ -11,11 +11,16 @@ const BackToHome = () => {
   const classes = useStyles();
   return (
     <div className={classes.backToHome}>
-      <Link href="/">
-        <a>← Back to home</a>
-      </Link>
+      <Link href="/">← Back to home</Link>
     </div>
   );
+};
+
+// Create a function that will be called at build time
+export const getStaticProps = async () => {
+  return {
+    props: {},
+  };
 };
 
 export default BackToHome;

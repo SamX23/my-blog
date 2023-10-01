@@ -1,8 +1,10 @@
-import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
-import Fab from "@material-ui/core/Fab";
-import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
-import Zoom from "@material-ui/core/Zoom";
+import { Theme } from "@mui/material/styles";
+import makeStyles from "@mui/styles/makeStyles";
+import createStyles from "@mui/styles/createStyles";
+import Fab from "@mui/material/Fab";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import Zoom from "@mui/material/Zoom";
 
 interface Props {
   children: React.ReactElement;
@@ -30,20 +32,25 @@ const ScrollTop = ({ children }: Props) => {
   };
 
   return (
-    <Zoom in={trigger}>
-      <div onClick={handleClick} role="presentation" className={classes.root}>
-        {children}
-      </div>
-    </Zoom>
+    <Zoom
+      in={trigger}
+      children={
+        <div onClick={handleClick} role="presentation" className={classes.root}>
+          {children}
+        </div>
+      }
+    />
   );
 };
 
 const ScrollToTop = () => (
-  <ScrollTop>
-    <Fab color="secondary" size="small" aria-label="scroll back to top">
-      <KeyboardArrowUpIcon />
-    </Fab>
-  </ScrollTop>
+  <ScrollTop
+    children={
+      <Fab color="secondary" size="small" aria-label="scroll back to top">
+        <KeyboardArrowUpIcon />
+      </Fab>
+    }
+  />
 );
 
 export default ScrollToTop;

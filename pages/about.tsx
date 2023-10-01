@@ -1,10 +1,11 @@
-import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
-import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
+import makeStyles from "@mui/styles/makeStyles";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 import { Layout as Main, ProjectList } from "../src/components";
 import EmbedPdf from "../src/components/pdfEmbed";
+import Image from "next/image";
 
 const useStyles = makeStyles({
   container: {
@@ -62,7 +63,7 @@ const About = () => {
           <Box className={classes.baseCover}>
             <Container>
               <Box className={classes.baseCoverImage}>
-                <img src="/images/profile.jpg" alt="profile" />
+                <Image src="/images/profile.jpg" alt="profile" />
               </Box>
               <Grid
                 container

@@ -1,7 +1,14 @@
-import { Theme } from "@material-ui/core";
-import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
+import { Theme } from "@mui/material";
+import {
+  ThemeProvider as MuiThemeProvider,
+  StyledEngineProvider,
+} from "@mui/material/styles";
 import { createContext, useCallback, useEffect, useState } from "react";
 import { darkTheme, lightTheme } from "./theme";
+
+declare module "@mui/styles/defaultTheme" {
+  interface DefaultTheme extends Theme {}
+}
 
 interface childrenProps {
   children: React.ReactNode;
@@ -47,9 +54,11 @@ export const ThemeProvider = ({ children }: childrenProps) => {
         isDark: !(selectedTheme.themeName === "darkTheme"),
       }}
     >
-      <MuiThemeProvider theme={selectedTheme.appliedTheme}>
-        {children}
-      </MuiThemeProvider>
+      <StyledEngineProvider injectFirst>
+        <MuiThemeProvider theme={selectedTheme.appliedTheme}>
+          {children}
+        </MuiThemeProvider>
+      </StyledEngineProvider>
     </ToggleThemeContext.Provider>
   );
 };

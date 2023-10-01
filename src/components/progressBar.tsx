@@ -1,4 +1,4 @@
-import { makeStyles } from "@material-ui/core/styles";
+import makeStyles from "@mui/styles/makeStyles";
 import { useCallback, useContext, useEffect } from "react";
 import { darkColorPalette, lightColorPalette } from "../theme/theme";
 import { ToggleThemeContext } from "../theme/themeProvider";
