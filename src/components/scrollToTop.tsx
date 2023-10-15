@@ -32,25 +32,20 @@ const ScrollTop = ({ children }: Props) => {
   };
 
   return (
-    <Zoom
-      in={trigger}
-      children={
-        <div onClick={handleClick} role="presentation" className={classes.root}>
-          {children}
-        </div>
-      }
-    />
+    <Zoom in={trigger}>
+      <div onClick={handleClick} role="presentation" className={classes.root}>
+        {children}
+      </div>
+    </Zoom>
   );
 };
 
 const ScrollToTop = () => (
-  <ScrollTop
-    children={
-      <Fab color="secondary" size="small" aria-label="scroll back to top">
-        <KeyboardArrowUpIcon />
-      </Fab>
-    }
-  />
+  <ScrollTop>
+    <Fab color="secondary" size="small" aria-label="scroll back to top">
+      <KeyboardArrowUpIcon />
+    </Fab>
+  </ScrollTop>
 );
 
 export default ScrollToTop;
