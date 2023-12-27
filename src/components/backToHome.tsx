@@ -16,11 +16,4 @@ const BackToHome = () => {
   );
 };
 
-// Create a function that will be called at build time
-export const getStaticProps = async () => {
-  return {
-    props: {},
-  };
-};
-
 export default BackToHome;
