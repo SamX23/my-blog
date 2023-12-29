@@ -63,7 +63,12 @@ const About = () => {
           <Box className={classes.baseCover}>
             <Container>
               <Box className={classes.baseCoverImage}>
-                <Image src="/images/profile.jpg" alt="profile" />
+                <Image
+                  src="/images/profile.jpg"
+                  alt="profile"
+                  width={300}
+                  height={250}
+                />
               </Box>
               <Grid
                 container

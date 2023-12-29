@@ -109,7 +109,6 @@ const Hero = ({ home, name }: Props) => {
       ) : (
         <Box className={classes.hero__NotHome}>
           <Link href="/">
-            <a>
               <Image
                 priority
                 src="/images/profile.jpg"
@@ -118,7 +117,6 @@ const Hero = ({ home, name }: Props) => {
                 width={108}
                 alt={name}
               />
-            </a>
           </Link>
           <Typography variant="h2">{name}</Typography>
         </Box>

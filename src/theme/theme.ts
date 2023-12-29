@@ -1,8 +1,4 @@
-import {
-  createTheme,
-  DeprecatedThemeOptions,
-  adaptV4Theme,
-} from "@mui/material/styles";
+import { createTheme, DeprecatedThemeOptions } from "@mui/material/styles";
 
 // Color pallete modified from https://colorhunt.co/palette/225739
 
@@ -86,5 +82,5 @@ const options = (dark: boolean): DeprecatedThemeOptions => {
   };
 };
 
-export const darkTheme = createTheme(adaptV4Theme(options(false)));
-export const lightTheme = createTheme(adaptV4Theme(options(true)));
+export const darkTheme = createTheme(options(false));
+export const lightTheme = createTheme(options(true));

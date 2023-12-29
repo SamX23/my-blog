@@ -57,6 +57,8 @@ const ProjectList = () => {
             .map((res) => (
               <a key={res.id} href={res.link} className={classes.gridItem}>
                 <Image
+                  width={100}
+                  height={100}
                   alt={res.name}
                   src={project.githubLink(res.repo, cardTheme)}
                 />
@@ -75,6 +77,8 @@ const ProjectList = () => {
             .map((res) => (
               <a key={res.id} href={res.link} className={classes.gridItem}>
                 <Image
+                  width={100}
+                  height={100}
                   alt={res.name}
                   src={project.githubLink(res.repo, cardTheme)}
                 />
@@ -93,6 +97,8 @@ const ProjectList = () => {
             .map((res) => (
               <a key={res.id} href={res.link} className={classes.gridItem}>
                 <Image
+                  width={100}
+                  height={100}
                   alt={res.name}
                   src={project.githubLink(res.repo, cardTheme)}
                 />
