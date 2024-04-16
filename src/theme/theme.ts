@@ -1,4 +1,7 @@
+"use client";
+
 import { createTheme, DeprecatedThemeOptions } from "@mui/material/styles";
+import { createContext } from "react";
 
 // Color pallete modified from https://colorhunt.co/palette/225739
 
@@ -84,3 +87,7 @@ const options = (dark: boolean): DeprecatedThemeOptions => {
 
 export const darkTheme = createTheme(options(false));
 export const lightTheme = createTheme(options(true));
+export const ToggleThemeContext = createContext({
+  toggleTheme: () => {},
+  isDark: false,
+});

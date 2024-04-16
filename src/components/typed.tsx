@@ -1,9 +1,11 @@
+"use client";
+
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 
 const TypedText = ({ arrayText }: { arrayText: Array<string> }) => {
-  const element = useRef(null);
-  const typedtext = useRef(null);
+  const element = useRef(null!);
+  const typedtext = useRef<any>(null!);
 
   useEffect(() => {
     const options = {
@@ -15,10 +17,14 @@ const TypedText = ({ arrayText }: { arrayText: Array<string> }) => {
       backDelay: 900,
     };
 
-    typedtext.current = new Typed(element.current, options);
+    let typedRef = typedtext?.current;
+
+    if (typedRef) {
+      typedRef = new Typed(element.current, options);
+    }
 
     return () => {
-      typedtext.current.destroy();
+      if (typedRef) typedtext?.current.destroy();
     };
   }, [arrayText]);
 

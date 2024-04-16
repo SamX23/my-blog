@@ -1,27 +1,14 @@
-import { Theme } from "@mui/material/styles";
-import makeStyles from "@mui/styles/makeStyles";
-import createStyles from "@mui/styles/createStyles";
 import Fab from "@mui/material/Fab";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Zoom from "@mui/material/Zoom";
+import { Box } from "@mui/material";
 
 interface Props {
   children: React.ReactElement;
 }
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      position: "fixed",
-      bottom: theme.spacing(3),
-      right: theme.spacing(3),
-    },
-  })
-);
-
 const ScrollTop = ({ children }: Props) => {
-  const classes = useStyles();
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 700,
@@ -33,9 +20,17 @@ const ScrollTop = ({ children }: Props) => {
 
   return (
     <Zoom in={trigger}>
-      <div onClick={handleClick} role="presentation" className={classes.root}>
+      <Box
+        onClick={handleClick}
+        role="presentation"
+        sx={(theme) => ({
+          position: "fixed",
+          bottom: theme.spacing(3),
+          right: theme.spacing(3),
+        })}
+      >
         {children}
-      </div>
+      </Box>
     </Zoom>
   );
 };

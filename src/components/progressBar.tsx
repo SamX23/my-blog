@@ -1,26 +1,16 @@
-import makeStyles from "@mui/styles/makeStyles";
+"use client";
+
 import { useCallback, useContext, useEffect } from "react";
-import { darkColorPalette, lightColorPalette } from "../theme/theme";
-import { ToggleThemeContext } from "../theme/themeProvider";
+import {
+  darkColorPalette,
+  lightColorPalette,
+  ToggleThemeContext,
+} from "../theme/theme";
+import { Box } from "@mui/material";
 
 const ProgressBar = () => {
   const { isDark } = useContext(ToggleThemeContext);
-  const useStyles = makeStyles({
-    progressContainer: {
-      width: "100%",
-      height: 8,
-    },
 
-    progressBar: {
-      height: "inherit",
-      background: isDark
-        ? darkColorPalette.loadingBar
-        : lightColorPalette.loadingBar,
-      width: 0,
-    },
-  });
-
-  const classes = useStyles();
   const handleScroll = useCallback(() => {
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
@@ -28,7 +18,10 @@ const ProgressBar = () => {
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight;
     const scrolled = (winScroll / height) * 100;
-    document.getElementById("myBar").style.width = `${scrolled}%`;
+    const progressBar = document.getElementById("myBar");
+    if (progressBar) {
+      progressBar.style.width = `${scrolled}%`;
+    }
   }, []);
 
   useEffect(() => {
@@ -37,9 +30,23 @@ const ProgressBar = () => {
   }, [handleScroll]);
 
   return (
-    <div className={classes.progressContainer}>
-      <div className={classes.progressBar} id="myBar" />
-    </div>
+    <Box
+      sx={{
+        width: "100%",
+        height: 8,
+      }}
+    >
+      <Box
+        sx={{
+          height: "inherit",
+          background: isDark
+            ? darkColorPalette.loadingBar
+            : lightColorPalette.loadingBar,
+          width: 0,
+        }}
+        id="myBar"
+      />
+    </Box>
   );
 };
 

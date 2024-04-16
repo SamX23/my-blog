@@ -1,14 +1,9 @@
-import { Theme } from "@mui/material";
-import {
-  ThemeProvider as MuiThemeProvider,
-  StyledEngineProvider,
-} from "@mui/material/styles";
-import { createContext, useCallback, useEffect, useState } from "react";
-import { darkTheme, lightTheme } from "./theme";
+"use client";
 
-declare module "@mui/styles/defaultTheme" {
-  interface DefaultTheme extends Theme {}
-}
+import { Theme } from "@mui/material";
+import { ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
+import { useCallback, useEffect, useState } from "react";
+import { darkTheme, lightTheme, ToggleThemeContext } from "./theme";
 
 interface childrenProps {
   children: React.ReactNode;
@@ -18,11 +13,6 @@ type SelectedTheme = {
   themeName: string;
   appliedTheme: Theme;
 };
-
-export const ToggleThemeContext = createContext({
-  toggleTheme: () => {},
-  isDark: false,
-});
 
 export const ThemeProvider = ({ children }: childrenProps) => {
   const [selectedTheme, setSelectedTheme] = useState<SelectedTheme>({
@@ -54,11 +44,9 @@ export const ThemeProvider = ({ children }: childrenProps) => {
         isDark: !(selectedTheme.themeName === "darkTheme"),
       }}
     >
-      <StyledEngineProvider injectFirst>
-        <MuiThemeProvider theme={selectedTheme.appliedTheme}>
-          {children}
-        </MuiThemeProvider>
-      </StyledEngineProvider>
+      <MuiThemeProvider theme={selectedTheme.appliedTheme}>
+        {children}
+      </MuiThemeProvider>
     </ToggleThemeContext.Provider>
   );
 };

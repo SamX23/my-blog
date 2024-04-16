@@ -1,0 +1,18 @@
+@keyframes animate {
+  0% {
+    opacity: 1;
+    top: "29%";
+  }
+  15% {
+    opacity: 1;
+    top: "60%";
+  }
+  50% {
+    opacity: 0;
+    top: "60%";
+  }
+  100% {
+    opacity: 0;
+    top: "29%";
+  }
+}

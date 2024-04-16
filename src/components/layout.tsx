@@ -1,12 +1,16 @@
+"use client";
+
 import { useContext } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
-import makeStyles from "@mui/styles/makeStyles";
-import { ToggleThemeContext } from "../theme/themeProvider";
-import { darkColorPalette, lightColorPalette } from "../theme/theme";
-import { defaultTitle, profile } from "../mock/data";
-import { HeadTag, Navigation, Hero, BackToHome, Footer } from "./index";
+import {
+  darkColorPalette,
+  lightColorPalette,
+  ToggleThemeContext,
+} from "../theme/theme";
+import { profile } from "../mock/data";
+import { Navigation, Hero, BackToHome, Footer } from "./index";
 import ScrollToTop from "./scrollToTop";
 
 interface Props {
@@ -15,42 +19,30 @@ interface Props {
   home?: boolean;
   blog?: boolean;
   noHero?: boolean;
-  siteTitle?: string;
 }
 
-const Layout = ({
-  children,
-  home,
-  blog,
-  noHero,
-  noContainer,
-  siteTitle = defaultTitle,
-}: Props) => {
+const Layout = ({ children, home, blog, noHero, noContainer }: Props) => {
   const { isDark } = useContext(ToggleThemeContext);
-  const useStyles = makeStyles({
-    layout: {
-      backgroundColor: isDark
-        ? darkColorPalette.primary
-        : lightColorPalette.primary,
-      color: isDark ? darkColorPalette.text : lightColorPalette.text,
-    },
-    container: {
-      minHeight: "100vh",
-    },
-  });
 
-  const classes = useStyles();
   return (
     <>
-      <HeadTag siteTitle={siteTitle} />
       <Navigation disable={blog} />
-      <Box className={classes.layout}>
+      <Box
+        sx={{
+          backgroundColor: isDark
+            ? darkColorPalette.primary
+            : lightColorPalette.primary,
+          color: isDark ? darkColorPalette.text : lightColorPalette.text,
+        }}
+      >
         <Grid
           container
           direction="column"
           justifyContent="space-between"
           alignItems="stretch"
-          className={classes.container}
+          sx={{
+            minHeight: "100vh",
+          }}
         >
           {!noHero && (
             <Grid item>

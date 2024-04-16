@@ -1,108 +1,161 @@
+"use client";
+
 import { useContext } from "react";
-import makeStyles from "@mui/styles/makeStyles";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { ToggleThemeContext } from "../theme/themeProvider";
-import { darkColorPalette, lightColorPalette } from "../theme/theme";
+import {
+  darkColorPalette,
+  lightColorPalette,
+  ToggleThemeContext,
+} from "../theme/theme";
 import { project } from "../mock/data";
 import Image from "next/image";
-
-const useStyles = makeStyles({
-  typography: {
-    lineHeight: "2em",
-    fontSize: "1.5rem",
-    fontWeight: "bold",
-    textAlign: "justify",
-  },
-  gridList: {
-    textAlign: "center",
-  },
-  gridItem: {
-    padding: ".25rem",
-    "@media(max-width: 440px)": {
-      "& img": {
-        maxWidth: "20rem",
-      },
-    },
-  },
-  projectVariant: {
-    textAlign: "center",
-    fontSize: 25,
-    margin: "1rem 0",
-  },
-});
+import { Link } from "@mui/material";
 
 const ProjectList = () => {
-  const classes = useStyles();
   const { isDark } = useContext(ToggleThemeContext);
   const cardTheme = isDark ? darkColorPalette.repo : lightColorPalette.repo;
 
   return (
     <Grid container direction="column">
       <Grid item>
-        <Typography variant="h3" className={classes.typography}>
+        <Typography
+          variant="h3"
+          sx={{
+            lineHeight: "2em",
+            fontSize: "1.5rem",
+            fontWeight: "bold",
+            textAlign: "justify",
+          }}
+        >
           PROJECT LIST:
         </Typography>
         <hr />
       </Grid>
 
       <Grid item>
-        <Typography variant="h3" className={classes.projectVariant}>
+        <Typography
+          variant="h3"
+          sx={{
+            textAlign: "center",
+            fontSize: 25,
+            margin: "1rem 0",
+          }}
+        >
           NEXT JS
         </Typography>
-        <Box className={classes.gridList}>
+        <Box
+          sx={{
+            textAlign: "center",
+          }}
+        >
           {project.repo
             .filter((x) => x.tech === "nextjs")
             .map((res) => (
-              <a key={res.id} href={res.link} className={classes.gridItem}>
+              <Link
+                key={res.id}
+                href={res.link}
+                sx={{
+                  padding: ".25rem",
+                  "@media(max-width: 440px)": {
+                    "& img": {
+                      maxWidth: "20rem",
+                    },
+                  },
+                }}
+              >
                 <Image
                   width={100}
                   height={100}
                   alt={res.name}
                   src={project.githubLink(res.repo, cardTheme)}
                 />
-              </a>
+              </Link>
             ))}
         </Box>
       </Grid>
 
       <Grid item>
-        <Typography variant="h3" className={classes.projectVariant}>
+        <Typography
+          variant="h3"
+          sx={{
+            textAlign: "center",
+            fontSize: 25,
+            margin: "1rem 0",
+          }}
+        >
           PURE REACT
         </Typography>
-        <Box className={classes.gridList}>
+        <Box
+          sx={{
+            textAlign: "center",
+          }}
+        >
           {project.repo
             .filter((x) => x.tech === "react")
             .map((res) => (
-              <a key={res.id} href={res.link} className={classes.gridItem}>
+              <Link
+                key={res.id}
+                href={res.link}
+                sx={{
+                  padding: ".25rem",
+                  "@media(max-width: 440px)": {
+                    "& img": {
+                      maxWidth: "20rem",
+                    },
+                  },
+                }}
+              >
                 <Image
                   width={100}
                   height={100}
                   alt={res.name}
                   src={project.githubLink(res.repo, cardTheme)}
                 />
-              </a>
+              </Link>
             ))}
         </Box>
       </Grid>
 
       <Grid item>
-        <Typography variant="h3" className={classes.projectVariant}>
+        <Typography
+          variant="h3"
+          sx={{
+            textAlign: "center",
+            fontSize: 25,
+            margin: "1rem 0",
+          }}
+        >
           HTML5, CSS3 and JS
         </Typography>
-        <Box className={classes.gridList}>
+        <Box
+          sx={{
+            textAlign: "center",
+          }}
+        >
           {project.repo
             .filter((x) => x.tech === "htmlcssjs")
             .map((res) => (
-              <a key={res.id} href={res.link} className={classes.gridItem}>
+              <Link
+                key={res.id}
+                href={res.link}
+                sx={{
+                  padding: ".25rem",
+                  "@media(max-width: 440px)": {
+                    "& img": {
+                      maxWidth: "20rem",
+                    },
+                  },
+                }}
+              >
                 <Image
                   width={100}
                   height={100}
                   alt={res.name}
                   src={project.githubLink(res.repo, cardTheme)}
                 />
-              </a>
+              </Link>
             ))}
         </Box>
       </Grid>

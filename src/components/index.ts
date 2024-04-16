@@ -1,4 +1,3 @@
-export { default as HeadTag } from "./head";
 export { default as Navigation } from "./navigation";
 export { default as Hero } from "./hero";
 export { default as BackToHome } from "./backToHome";
