@@ -1,10 +1,10 @@
 import Layout from "../../../src/components/layout";
-import { getAllPostIds, getPostData } from "../../../src/components/lib/posts";
+import { getAllPostIds, getPostData } from "../../../src/lib/posts";
 import DateFormatter from "../../../src/components/dateFormatter";
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box";
 
 export async function generateMetadata({ params }) {
-  const postData = await getPosts(params?.id as string);
+  const postData = await getPostData(params?.id as string);
 
   return {
     title: postData.title,
@@ -12,8 +12,13 @@ export async function generateMetadata({ params }) {
   };
 }
 
+export const generateStaticParams = async () => {
+  const paths = getAllPostIds();
+  return paths;
+};
+
 const Post = async ({ params }) => {
-  const postData = await getPosts(params?.id as string);
+  const postData = await getPostData(params?.id as string);
 
   return (
     <Layout blog>
@@ -36,16 +41,6 @@ const Post = async ({ params }) => {
       </article>
     </Layout>
   );
-};
-
-export const generateStaticParams = async () => {
-  const paths = getAllPostIds();
-  return paths;
-};
-
-export const getPosts = async (id: string) => {
-  const postData = await getPostData(id);
-  return postData;
 };
 
 export default Post;

@@ -1,5 +1,3 @@
-"use client";
-
 import { createTheme, DeprecatedThemeOptions } from "@mui/material/styles";
 import { createContext } from "react";
 

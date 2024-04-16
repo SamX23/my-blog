@@ -9,7 +9,7 @@ import {
   lightColorPalette,
   ToggleThemeContext,
 } from "../theme/theme";
-import { project } from "../mock/data";
+import { project } from "../constant/data";
 import Image from "next/image";
 import { Link } from "@mui/material";
 
@@ -66,8 +66,12 @@ const ProjectList = () => {
                 }}
               >
                 <Image
-                  width={100}
+                  width={325}
                   height={100}
+                  style={{
+                    width: "325px",
+                    height: "100%",
+                  }}
                   alt={res.name}
                   src={project.githubLink(res.repo, cardTheme)}
                 />
@@ -108,8 +112,12 @@ const ProjectList = () => {
                 }}
               >
                 <Image
-                  width={100}
+                  width={325}
                   height={100}
+                  style={{
+                    width: "325px",
+                    height: "100%",
+                  }}
                   alt={res.name}
                   src={project.githubLink(res.repo, cardTheme)}
                 />
@@ -150,8 +158,12 @@ const ProjectList = () => {
                 }}
               >
                 <Image
-                  width={100}
+                  width={325}
                   height={100}
+                  style={{
+                    width: "325px",
+                    height: "100%",
+                  }}
                   alt={res.name}
                   src={project.githubLink(res.repo, cardTheme)}
                 />

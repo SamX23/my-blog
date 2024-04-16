@@ -28,7 +28,7 @@ const TypedText = ({ arrayText }: { arrayText: Array<string> }) => {
     };
   }, [arrayText]);
 
-  return <span ref={element}>{null}</span>;
+  return <span ref={element} />;
 };
 
 export default TypedText;

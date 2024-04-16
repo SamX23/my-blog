@@ -1,9 +1,9 @@
 import Link from "next/link";
-import {  Metadata } from "next";
-import { getSortedPostsData } from "../../src/components/lib/posts";
+import { Metadata } from "next";
+import { getSortedPostsData } from "../../src/lib/posts";
 import DateFormatter from "../../src/components/dateFormatter";
 import Layout from "../../src/components/layout";
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box";
 
 type AllPostProps = {
   date: string;

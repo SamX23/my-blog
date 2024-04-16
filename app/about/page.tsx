@@ -2,9 +2,10 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import { Layout as Main, ProjectList } from "../../src/components";
 import Image from "next/image";
 import { Metadata } from "next";
+import Layout from "../../src/components/layout";
+import ProjectList from "../../src/components/projectList";
 
 export const metadata: Metadata = {
   title: "About Sami",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 const About = () => (
-  <Main noContainer noHero>
+  <Layout noContainer noHero>
     <Grid container>
       <Grid item xs={12}>
         <Box
@@ -104,7 +105,7 @@ const About = () => (
         </Container>
       </Grid>
     </Grid>
-  </Main>
+  </Layout>
 );
 
 export default About;

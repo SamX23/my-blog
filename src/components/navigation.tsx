@@ -4,13 +4,14 @@ import Link from "next/link";
 import { useCallback, useContext, useEffect, useState } from "react";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
-import { ProgressBar, ThemeButton } from "./index";
 import {
   darkColorPalette,
   lightColorPalette,
   ToggleThemeContext,
 } from "../theme/theme";
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box";
+import ProgressBar from "./progressBar";
+import ThemeButton from "./themeButton";
 
 interface Props {
   disable?: boolean;

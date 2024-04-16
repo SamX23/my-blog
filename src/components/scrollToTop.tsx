@@ -2,7 +2,7 @@ import Fab from "@mui/material/Fab";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Zoom from "@mui/material/Zoom";
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box";
 
 interface Props {
   children: React.ReactElement;
@@ -23,11 +23,13 @@ const ScrollTop = ({ children }: Props) => {
       <Box
         onClick={handleClick}
         role="presentation"
-        sx={(theme) => ({
-          position: "fixed",
-          bottom: theme.spacing(3),
-          right: theme.spacing(3),
-        })}
+        sx={(theme) => {
+          return {
+            position: "fixed",
+            bottom: theme.spacing(3),
+            right: theme.spacing(3),
+          };
+        }}
       >
         {children}
       </Box>
@@ -35,12 +37,14 @@ const ScrollTop = ({ children }: Props) => {
   );
 };
 
-const ScrollToTop = () => (
-  <ScrollTop>
-    <Fab color="secondary" size="small" aria-label="scroll back to top">
-      <KeyboardArrowUpIcon />
-    </Fab>
-  </ScrollTop>
-);
+const ScrollToTop = () => {
+  return (
+    <ScrollTop>
+      <Fab color="secondary" size="small" aria-label="scroll back to top">
+        <KeyboardArrowUpIcon />
+      </Fab>
+    </ScrollTop>
+  );
+};
 
 export default ScrollToTop;

@@ -1,5 +1,5 @@
 import Grid from "@mui/material/Grid";
-import { socialMedia } from "../mock/data";
+import { socialMedia } from "../constant/data";
 
 const Footer = () => (
   <footer>
@@ -60,5 +60,4 @@ const Footer = () => (
     </Grid>
   </footer>
 );
-
 export default Footer;

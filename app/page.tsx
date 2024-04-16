@@ -1,7 +1,7 @@
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
-import { Layout } from "../src/components/index";
 import Link from "next/link";
+import Layout from "../src/components/layout";
 
 const Home = () => (
   <Layout home>

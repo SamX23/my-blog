@@ -9,9 +9,12 @@ import {
   lightColorPalette,
   ToggleThemeContext,
 } from "../theme/theme";
-import { profile } from "../mock/data";
-import { Navigation, Hero, BackToHome, Footer } from "./index";
+import { profile } from "../constant/data";
 import ScrollToTop from "./scrollToTop";
+import Navigation from "./navigation";
+import Hero from "./hero";
+import BackToHome from "./backToHome";
+import Footer from "./footer";
 
 interface Props {
   children: React.ReactNode;

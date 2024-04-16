@@ -6,7 +6,7 @@ import {
   lightColorPalette,
   ToggleThemeContext,
 } from "../theme/theme";
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box";
 
 const ProgressBar = () => {
   const { isDark } = useContext(ToggleThemeContext);
