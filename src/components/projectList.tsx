@@ -11,7 +11,7 @@ import {
 } from "../theme/theme";
 import { project } from "../constant/data";
 import Image from "next/image";
-import { Link } from "@mui/material";
+import Link from "@mui/material/Link";
 
 const ProjectList = () => {
   const { isDark } = useContext(ToggleThemeContext);

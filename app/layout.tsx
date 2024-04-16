@@ -1,4 +1,4 @@
-import { CssBaseline } from "@mui/material";
+import CssBaseline from "@mui/material/CssBaseline";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ThemeProvider } from "../src/providers/themeProvider";
 
@@ -30,9 +30,6 @@ export async function generateMetadata() {
     },
     other: {
       "google-site-verification": "nWaKNPg87UzU3zONVNwXr_dzHzBfS35RS-hceGJaxJk",
-      // "theme-color": isDark
-      //   ? darkColorPalette.primary
-      //   : lightColorPalette.primary,
     },
   };
 }

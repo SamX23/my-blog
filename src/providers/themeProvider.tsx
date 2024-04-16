@@ -1,6 +1,6 @@
 "use client";
 
-import { CssBaseline, Theme } from "@mui/material";
+import { Theme } from "@mui/material";
 import { ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
 import { useCallback, useEffect, useState } from "react";
 import { darkTheme, lightTheme, ToggleThemeContext } from "../theme/theme";
@@ -44,8 +44,6 @@ export const ThemeProvider = ({ children }: childrenProps) => {
         isDark: !(selectedTheme.themeName === "darkTheme"),
       }}
     >
-      <CssBaseline />
-
       <MuiThemeProvider theme={selectedTheme.appliedTheme}>
         {children}
       </MuiThemeProvider>
