@@ -19,10 +19,8 @@ const Hero = ({ home, name }: Props) => (
         <Box
           sx={{
             position: "relative",
-            minHeight: "100vh",
-            padding: "3em .5em",
+            minHeight: "calc(100vh - 60px)",
             display: "flex",
-
             "& div": {
               margin: "auto",
             },
