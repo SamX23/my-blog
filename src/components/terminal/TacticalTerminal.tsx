@@ -17,7 +17,7 @@ export function TacticalTerminal() {
       response: (
         <div className="space-y-1 text-on-surface">
           <p className="text-neon-cyan font-bold">
-            Sami Kalammallah // @SamX23: 7+ Years Software Engineer & Hardcore PC Gamer.
+            Sami Kalammallah // @SamX23: 5+ Years Software Engineer & Hardcore PC Gamer.
           </p>
           <p className="text-on-surface-variant">
             Specializing in performant web architectures, cross-platform apps, GraphQL pipelines, and microservices at Mazecare.
@@ -56,18 +56,19 @@ export function TacticalTerminal() {
       case "whoami":
         response = (
           <p className="text-high-volt-white">
-            <span className="text-neon-cyan font-bold">Sami Kalammallah</span> — Senior Software Engineer (Mazecare, Remote HK). Focus: Next.js, TypeScript, GraphQL, Docker, Cross-Platform Architecture.
+            <span className="text-neon-cyan font-bold">Sami Kalammallah</span> — Senior Software Engineer (Mazecare, Remote HK). Focus: Next.js, TypeScript, GraphQL, Docker, Cross-Platform Architecture. 5+ Years Production Experience.
           </p>
         );
         break;
       case "specs":
         response = (
           <div className="space-y-0.5 text-xs text-on-surface">
-            <p>💻 <span className="text-solar-amber font-bold">RIG:</span> Acer Nitro 5 Gaming Laptop</p>
+            <p>💻 <span className="text-solar-amber font-bold">MAIN WEAPON:</span> Acer Nitro 5 AN-515-58</p>
             <p>⚡ <span className="text-neon-cyan font-bold">CPU:</span> Intel Core i5-12500H (12 Cores / 16 Threads)</p>
-            <p>🎮 <span className="text-rog-crimson font-bold">GPU:</span> NVIDIA GeForce RTX 3050</p>
-            <p>🧠 <span className="text-high-volt-white font-bold">RAM:</span> 16GB DDR4 High-Speed Dual-Channel</p>
-            <p>⌨️ <span className="text-solar-amber font-bold">GEAR:</span> Demon Slayer Rengoku x PressPlay Flame Keyboard, Logitech G Mouse, Razer Kraken Headset</p>
+            <p>🎮 <span className="text-rog-crimson font-bold">VGA:</span> NVIDIA GeForce RTX 3050 4GB</p>
+            <p>🧠 <span className="text-high-volt-white font-bold">RAM:</span> 2x8GB DDR4 3200MHz</p>
+            <p>🖥️ <span className="text-neon-cyan font-bold">MONITOR:</span> Lenovo Legion 24in</p>
+            <p>⌨️ <span className="text-solar-amber font-bold">ACCESSORIES:</span> Pressplay Essential75 Rengoku Version, Fantech Maxfit 61, Fantech Vigil MP902, Logitech G102 Prodigy, Logitech G Pro Headphone, dbE DJ80</p>
           </div>
         );
         break;
@@ -84,7 +85,7 @@ export function TacticalTerminal() {
       case "age":
         response = (
           <p className="text-high-volt-white">
-            ALIVE SINCE 1995 // Current Cycle: <span className="text-solar-amber font-bold">31 Years Old</span> // 7+ Years Production Engineering.
+            ALIVE SINCE 1995 // Current Cycle: <span className="text-solar-amber font-bold">31 Years Old</span> // 5+ Years Production Engineering.
           </p>
         );
         break;

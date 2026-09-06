@@ -27,7 +27,7 @@ export default async function PortfolioPage() {
               </span>
               <span className="hidden sm:inline text-solar-amber font-mono">CALLSIGN: SamX23</span>
               <span className="text-wireframe-steel">//</span>
-              <span className="text-high-volt-white">CLASS: 7+ YRS SYSTEM ARCHITECT // PC GAMER</span>
+              <span className="text-high-volt-white">CLASS: 5+ YRS SYSTEM ARCHITECT // PC GAMER</span>
             </div>
             <div className="flex items-center gap-3">
               <span className="text-rog-crimson font-bold">DISCIPLINE: DOTA 2 &amp; CS2 COMPETITIVE</span>
@@ -48,7 +48,7 @@ export default async function PortfolioPage() {
               </div>
               <div className="flex items-center gap-2 font-mono text-xs">
                 <span className="text-solar-amber bg-solar-amber/10 px-2 py-0.5 border border-solar-amber/30">
-                  7+ YEARS PRODUCTION SOFTWARE
+                  5+ YEARS PRODUCTION SOFTWARE
                 </span>
                 <span className="text-rog-crimson bg-rog-crimson/10 px-2 py-0.5 border border-rog-crimson/30">
                   ELITE PC GAMER
@@ -74,7 +74,7 @@ export default async function PortfolioPage() {
             </h1>
             <p className="max-w-3xl text-sm md:text-base text-on-surface leading-relaxed">
               Senior Software Engineer (Age 31, born 1995) with over{" "}
-              <span className="text-neon-cyan font-bold">7+ years of hands-on production engineering</span> designing
+              <span className="text-neon-cyan font-bold">5+ years of hands-on production engineering</span> designing
               fault-tolerant backends, high-throughput microservices, clinical workflows, and distributed data pipelines.
               Concurrently a hardcore PC gamer dominating competitive tactical lobbies across{" "}
               <span className="text-rog-crimson font-bold">Dota 2</span> and{" "}
@@ -93,7 +93,7 @@ export default async function PortfolioPage() {
                     <span className="w-2 h-2 rounded-full bg-neon-cyan animate-pulse"></span>
                     SOFTWARE_ENGINEERING_CORE
                   </span>
-                  <span className="text-[10px] text-on-surface-variant">[DEV_SPEC // 7+ YRS]</span>
+                  <span className="text-[10px] text-on-surface-variant">[DEV_SPEC // 5+ YRS]</span>
                 </div>
                 <div className="grid grid-cols-2 gap-3 py-3 font-mono text-xs">
                   <div>
@@ -108,7 +108,7 @@ export default async function PortfolioPage() {
                 <div className="bg-obsidian-deep p-3 border border-wireframe-steel text-[11px] font-mono space-y-1">
                   <p className="text-neon-cyan">[DEPLOY] Production Mazecare HealthTech System // Healthy</p>
                   <p className="text-solar-amber">[GRAPHQL] Schema orchestration &amp; cross-platform release pipeline</p>
-                  <p className="text-on-surface-variant">[VERIFIED] 7+ Years engineering resilience: 99.99% uptime target</p>
+                  <p className="text-on-surface-variant">[VERIFIED] 5+ Years engineering resilience: 99.99% uptime target</p>
                 </div>
               </div>
 
@@ -167,14 +167,14 @@ export default async function PortfolioPage() {
         <section id="repo-projects" className="w-full max-w-[88rem] mx-auto px-4 md:px-8 py-12 border-t border-wireframe-steel">
           <div className="flex items-center justify-between pb-6 mb-8 border-b border-wireframe-steel">
             <div>
-              <span className="font-mono text-xs text-solar-amber block">// SUBSYSTEM_02 // 7+ YEARS SOFTWARE ENGINEERING</span>
+              <span className="font-mono text-xs text-solar-amber block">// SUBSYSTEM_02 // 5+ YEARS SOFTWARE ENGINEERING</span>
               <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-high-volt-white uppercase">
                 [02] REPOSITORIES // CORE ENGINEERING BUILDS
               </h2>
             </div>
             <div className="hidden sm:flex items-center gap-4 font-mono text-xs">
               <span className="text-on-surface-variant">GITHUB: <span className="text-neon-cyan">@SamX23</span></span>
-              <span className="text-on-surface-variant">EXPERIENCE: <span className="text-solar-amber">7+ YRS</span></span>
+              <span className="text-on-surface-variant">EXPERIENCE: <span className="text-solar-amber">5+ YRS</span></span>
               <span className="text-neon-cyan bg-neon-cyan/10 px-2 py-0.5 border border-neon-cyan/30">STATUS: PRODUCTION_TESTED</span>
             </div>
           </div>
@@ -247,7 +247,7 @@ export default async function PortfolioPage() {
             {/* Core Matrix */}
             <div className="bg-obsidian-surface border border-wireframe-steel p-5 rounded space-y-4">
               <div className="flex items-center justify-between font-mono text-xs pb-2 border-b border-wireframe-steel">
-                <span className="font-bold text-high-volt-white">7+ YEARS ENGINEERING MATRIX</span>
+                <span className="font-bold text-high-volt-white">5+ YEARS ENGINEERING MATRIX</span>
                 <span className="text-neon-cyan">[SENIOR_LEVEL]</span>
               </div>
               <div className="space-y-3 font-mono text-xs">
@@ -390,7 +390,7 @@ export default async function PortfolioPage() {
           {/* Philosophy Banner */}
           <div className="p-6 bg-obsidian-deep border-l-4 border-solar-amber border-y border-r border-wireframe-steel font-mono text-xs md:text-sm text-high-volt-white leading-relaxed">
             <span className="text-solar-amber font-bold block mb-1">// DUAL DISCIPLINE PHILOSOPHY [AGE 31 • ALIVE SINCE &apos;95]</span>
-            &ldquo;Seven years of architecting scalable software taught me system resilience; competitive Dota 2 and CS2 lobbies taught me rapid execution under fire. Precision in code, dominance in the arena.&rdquo;
+            &ldquo;Five years of architecting scalable software taught me system resilience; competitive Dota 2 and CS2 lobbies taught me rapid execution under fire. Precision in code, dominance in the arena.&rdquo;
           </div>
         </section>
 
@@ -400,47 +400,93 @@ export default async function PortfolioPage() {
             <div>
               <span className="font-mono text-xs text-solar-amber block">// SUBSYSTEM_04 // SAMI KALAMMALLAH BATTLESTATION RIG</span>
               <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-high-volt-white uppercase">
-                [04] RIG_SPECS // ACER NITRO 5 &amp; RENGOKU EDITION
+                [04] RIG_SPECS // ACER NITRO 5 AN-515-58 &amp; TACTICAL LOADOUT
               </h2>
             </div>
             <div className="hidden sm:flex items-center gap-3 font-mono text-xs text-neon-cyan">
-              <span>CORE: INTEL 12TH GEN HYBRID</span>
+              <span>CORE: INTEL I5-12500H</span>
               <span className="text-wireframe-steel">//</span>
-              <span>GPU: RTX 3050</span>
+              <span>VGA: RTX 3050 4GB</span>
+              <span className="text-wireframe-steel">//</span>
+              <span className="text-solar-amber">RAM: 16GB 3200MHZ</span>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="bg-obsidian-surface border border-wireframe-steel p-5 rounded space-y-2">
-              <span className="text-[10px] font-mono text-on-surface-variant block">CORE CHASSIS</span>
-              <h3 className="font-bold text-high-volt-white text-base">Acer Nitro 5 Gaming Laptop</h3>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+            {/* Main Weapon */}
+            <div className="bg-obsidian-surface border border-neon-cyan/40 p-5 rounded space-y-2 relative chamfer-card shadow-[0_0_12px_rgba(0,240,255,0.08)]">
+              <span className="text-[10px] font-mono text-neon-cyan font-bold block">MAIN WEAPON // CHASSIS</span>
+              <h3 className="font-bold text-high-volt-white text-base">Acer Nitro 5 AN-515-58</h3>
               <p className="text-xs text-on-surface-variant font-mono">
-                High-performance dual-fan cooling, quad-exhaust ports, 144Hz IPS display, and NitroSense overclocking.
+                Dedicated gaming battlestation driving high-throughput local microservice builds, containerized clusters, and competitive gaming lobbies.
               </p>
             </div>
 
+            {/* Compute */}
             <div className="bg-obsidian-surface border border-wireframe-steel p-5 rounded space-y-2">
-              <span className="text-[10px] font-mono text-neon-cyan block">COMPUTE PROCESSOR</span>
+              <span className="text-[10px] font-mono text-solar-amber block">COMPUTE ENGINE</span>
               <h3 className="font-bold text-high-volt-white text-base">Intel Core i5-12500H</h3>
               <p className="text-xs text-on-surface-variant font-mono">
-                12 Cores (4 P-Cores, 8 E-Cores) / 16 Threads, up to 4.50 GHz Turbo for compilation &amp; heavy builds.
+                12 Cores (4 Performance + 8 Efficient Cores) / 16 Threads, up to 4.50 GHz turbo clock for concurrent compilation.
               </p>
             </div>
 
+            {/* VGA & RAM */}
             <div className="bg-obsidian-surface border border-wireframe-steel p-5 rounded space-y-2">
-              <span className="text-[10px] font-mono text-rog-crimson block">GRAPHICS ACCELERATOR</span>
-              <h3 className="font-bold text-high-volt-white text-base">NVIDIA RTX 3050</h3>
+              <span className="text-[10px] font-mono text-rog-crimson block">GRAPHICS &amp; MEMORY</span>
+              <h3 className="font-bold text-high-volt-white text-base">RTX 3050 4GB + 16GB RAM</h3>
               <p className="text-xs text-on-surface-variant font-mono">
-                Ampere architecture, dedicated Ray Tracing Cores, DLSS acceleration, and crisp frame delivery.
+                NVIDIA Ampere RTX 3050 4GB VRAM paired with 2x8GB DDR4 3200MHz dual-channel high-frequency memory.
               </p>
             </div>
 
+            {/* Display */}
             <div className="bg-obsidian-surface border border-wireframe-steel p-5 rounded space-y-2">
-              <span className="text-[10px] font-mono text-solar-amber block">TACTICAL GEAR</span>
-              <h3 className="font-bold text-high-volt-white text-base">Rengoku Flame Mechanical</h3>
+              <span className="text-[10px] font-mono text-neon-cyan block">BATTLE VIEWPORT</span>
+              <h3 className="font-bold text-high-volt-white text-base">Lenovo Legion 24in</h3>
               <p className="text-xs text-on-surface-variant font-mono">
-                Demon Slayer Rengoku x PressPlay Flame Keyboard, Logitech G Mouse, and Razer Kraken Spatial Audio.
+                Dedicated high-refresh 24-inch gaming monitor tuned for sub-tick tactical clarity and instant target acquisition.
               </p>
+            </div>
+          </div>
+
+          {/* Tactical Accessories Roster */}
+          <div className="bg-obsidian-surface border border-wireframe-steel p-6 rounded relative">
+            <div className="flex items-center justify-between font-mono text-xs pb-3 mb-4 border-b border-wireframe-steel">
+              <span className="text-solar-amber font-bold">TACTICAL ACCESSORIES &amp; PERIPHERAL ARSENAL</span>
+              <span className="text-on-surface-variant text-[10px]">[HARDWARE_DEPLOYED]</span>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 font-mono text-xs">
+              <div className="p-3 bg-obsidian-deep border border-solar-amber/30 rounded">
+                <span className="text-[10px] text-solar-amber block">PRIMARY KEYBOARD</span>
+                <span className="text-high-volt-white font-bold text-xs block mt-1">Pressplay Essential75</span>
+                <span className="text-[10px] text-solar-amber/80">Rengoku Version 🔥</span>
+              </div>
+              <div className="p-3 bg-obsidian-deep border border-wireframe-steel rounded">
+                <span className="text-[10px] text-neon-cyan block">TACTICAL KEYBOARD</span>
+                <span className="text-high-volt-white font-bold text-xs block mt-1">Fantech Maxfit 61</span>
+                <span className="text-[10px] text-on-surface-variant">Compact 60%</span>
+              </div>
+              <div className="p-3 bg-obsidian-deep border border-wireframe-steel rounded">
+                <span className="text-[10px] text-rog-crimson block">TARGETING MOUSE</span>
+                <span className="text-high-volt-white font-bold text-xs block mt-1">Logitech G102</span>
+                <span className="text-[10px] text-on-surface-variant">Prodigy Optical</span>
+              </div>
+              <div className="p-3 bg-obsidian-deep border border-wireframe-steel rounded">
+                <span className="text-[10px] text-neon-cyan block">DESK SURFACE</span>
+                <span className="text-high-volt-white font-bold text-xs block mt-1">Fantech Vigil MP902</span>
+                <span className="text-[10px] text-on-surface-variant">Speed Mat</span>
+              </div>
+              <div className="p-3 bg-obsidian-deep border border-wireframe-steel rounded">
+                <span className="text-[10px] text-solar-amber block">PRO AUDIO</span>
+                <span className="text-high-volt-white font-bold text-xs block mt-1">Logitech G Pro</span>
+                <span className="text-[10px] text-on-surface-variant">Spatial Headphone</span>
+              </div>
+              <div className="p-3 bg-obsidian-deep border border-wireframe-steel rounded">
+                <span className="text-[10px] text-on-surface-variant block">MONITOR AUDIO</span>
+                <span className="text-high-volt-white font-bold text-xs block mt-1">dbE DJ80</span>
+                <span className="text-[10px] text-on-surface-variant">Studio Monitor</span>
+              </div>
             </div>
           </div>
         </section>

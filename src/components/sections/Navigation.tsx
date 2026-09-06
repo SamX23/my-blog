@@ -9,8 +9,8 @@ export function Navigation() {
       <div className="h-20 max-w-[88rem] mx-auto px-4 md:px-8 flex items-center justify-between gap-4">
         {/* Brand & Callsign */}
         <div className="flex items-center gap-3">
-          <div className="relative p-1 rounded border border-neon-cyan/40 bg-surface-container shadow-[0_0_12px_rgba(0,240,255,0.3)]">
-            <span className="text-rog-crimson font-black text-xl tracking-tighter">ROG</span>
+          <div className="relative flex items-center justify-center w-8 h-8 rounded border border-neon-cyan/40 bg-surface-container shadow-[0_0_12px_rgba(0,240,255,0.3)]">
+            <span className="w-2.5 h-2.5 bg-neon-cyan rounded-full animate-pulse shadow-[0_0_8px_#00f0ff]"></span>
           </div>
           <div className="flex flex-col">
             <div className="flex items-center gap-2">
@@ -23,7 +23,7 @@ export function Navigation() {
             </div>
             <div className="hidden sm:flex items-center gap-2 font-mono text-[10px] text-on-surface-variant">
               <span className="inline-block w-1.5 h-1.5 bg-neon-cyan rounded-full animate-pulse shadow-[0_0_8px_#00f0ff]"></span>
-              <span>EXP: 7+ YRS SOFT_ENG</span>
+              <span>EXP: 5+ YRS SOFT_ENG</span>
               <span className="text-tactical-slate">//</span>
               <span className="text-solar-amber">HARDCORE PC GAMER</span>
               <span className="text-tactical-slate">//</span>

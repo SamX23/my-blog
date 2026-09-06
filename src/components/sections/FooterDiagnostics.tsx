@@ -19,7 +19,7 @@ export function FooterDiagnostics() {
           <span className="text-wireframe-steel">//</span>
           <span className="text-rog-crimson">ARENA: DOTA 2 &amp; CS2 READY</span>
           <span className="text-wireframe-steel">//</span>
-          <span className="text-neon-cyan">EXP: 7+ YRS SOFT_ENG</span>
+          <span className="text-neon-cyan">EXP: 5+ YRS SOFT_ENG</span>
         </div>
         <div className="hidden md:flex items-center gap-4">
           <span className="text-solar-amber font-bold">RENGOKU FLAME ACTIVE</span>
