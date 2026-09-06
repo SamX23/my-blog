@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { ThemeProvider } from "../src/lib/themeContext";
 import { CyberCursor } from "../src/components/hud/CyberCursor";
 import "./global.css";
 
@@ -40,8 +41,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`dark ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
       <body className="bg-obsidian-deep text-on-surface antialiased selection:bg-neon-cyan selection:text-obsidian-deep">
-        <CyberCursor />
-        {children}
+        <ThemeProvider>
+          <CyberCursor />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

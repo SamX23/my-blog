@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useAuraTheme } from "../../lib/themeContext";
 
 export function CyberCursor() {
+  const { crosshairColor, crosshairSize } = useAuraTheme();
   const [pos, setPos] = useState({ x: -100, y: -100 });
   const [trailingPos, setTrailingPos] = useState({ x: -100, y: -100 });
   const [isPointer, setIsPointer] = useState(false);
@@ -10,9 +12,7 @@ export function CyberCursor() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Only show custom cursor on fine pointer devices (desktop mouse)
     if (window.matchMedia("(pointer: coarse)").matches) return;
-
     setIsVisible(true);
 
     const handleMouseMove = (e: MouseEvent) => {
@@ -45,7 +45,6 @@ export function CyberCursor() {
     };
   }, []);
 
-  // Smooth trailing reticle ring animation
   useEffect(() => {
     let animFrame: number;
 
@@ -62,11 +61,12 @@ export function CyberCursor() {
     };
 
     animFrame = requestAnimationFrame(follow);
-
     return () => cancelAnimationFrame(animFrame);
   }, [pos]);
 
   if (!isVisible) return null;
+
+  const sizeMultiplier = crosshairSize === "small" ? 0.75 : crosshairSize === "large" ? 1.3 : 1;
 
   return (
     <div className="pointer-events-none fixed inset-0 z-[9999] overflow-hidden">
@@ -79,13 +79,13 @@ export function CyberCursor() {
         }}
       >
         <div
-          className={`rounded-full transition-all duration-150 ${
-            isClicking
-              ? "w-3 h-3 bg-rog-crimson shadow-[0_0_12px_#ff0055]"
-              : isPointer
-              ? "w-2 h-2 bg-solar-amber shadow-[0_0_10px_#ff7700]"
-              : "w-1.5 h-1.5 bg-neon-cyan shadow-[0_0_8px_#00f0ff]"
-          }`}
+          className="rounded-full transition-all duration-150"
+          style={{
+            width: isClicking ? `${12 * sizeMultiplier}px` : `${6 * sizeMultiplier}px`,
+            height: isClicking ? `${12 * sizeMultiplier}px` : `${6 * sizeMultiplier}px`,
+            backgroundColor: isClicking ? "#ff0055" : crosshairColor,
+            boxShadow: `0 0 10px ${isClicking ? "#ff0055" : crosshairColor}`,
+          }}
         />
       </div>
 
@@ -100,20 +100,40 @@ export function CyberCursor() {
         <div
           className={`relative rounded-full border transition-all duration-200 ${
             isClicking
-              ? "w-7 h-7 border-rog-crimson scale-75 rotate-45 shadow-[0_0_15px_rgba(255,0,85,0.6)]"
+              ? "scale-75 rotate-45 border-rog-crimson shadow-[0_0_15px_#ff0055]"
               : isPointer
-              ? "w-10 h-10 border-solar-amber/80 scale-110 rotate-12 shadow-[0_0_14px_rgba(255,119,0,0.5)] border-dashed"
-              : "w-8 h-8 border-neon-cyan/50 shadow-[0_0_10px_rgba(0,240,255,0.25)]"
+              ? "scale-115 rotate-12 border-dashed shadow-[0_0_14px_rgba(255,119,0,0.5)]"
+              : "shadow-[0_0_10px_rgba(0,240,255,0.25)]"
           }`}
+          style={{
+            width: `${32 * sizeMultiplier}px`,
+            height: `${32 * sizeMultiplier}px`,
+            borderColor: isClicking ? "#ff0055" : crosshairColor,
+          }}
         >
           {/* Target Reticle Crosshair Ticks */}
-          <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 h-1.5 bg-neon-cyan/80"></span>
-          <span className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-0.5 h-1.5 bg-neon-cyan/80"></span>
-          <span className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 h-0.5 w-1.5 bg-neon-cyan/80"></span>
-          <span className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 h-0.5 w-1.5 bg-neon-cyan/80"></span>
+          <span
+            className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 h-1.5"
+            style={{ backgroundColor: crosshairColor }}
+          />
+          <span
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-0.5 h-1.5"
+            style={{ backgroundColor: crosshairColor }}
+          />
+          <span
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 h-0.5 w-1.5"
+            style={{ backgroundColor: crosshairColor }}
+          />
+          <span
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 h-0.5 w-1.5"
+            style={{ backgroundColor: crosshairColor }}
+          />
 
           {isPointer && (
-            <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 font-mono text-[8px] text-solar-amber font-bold tracking-widest uppercase">
+            <span
+              className="absolute -bottom-4 left-1/2 -translate-x-1/2 font-mono text-[8px] font-bold tracking-widest uppercase"
+              style={{ color: crosshairColor }}
+            >
               LOCK
             </span>
           )}

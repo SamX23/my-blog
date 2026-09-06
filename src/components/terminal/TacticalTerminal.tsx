@@ -8,6 +8,150 @@ interface CommandOutput {
   response: React.ReactNode;
 }
 
+function ReactionGame() {
+  const [gameState, setGameState] = useState<"idle" | "waiting" | "ready" | "early" | "finished">("idle");
+  const [reactionTime, setReactionTime] = useState<number | null>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const startTimeRef = useRef<number>(0);
+
+  const startTest = async () => {
+    setGameState("waiting");
+    setReactionTime(null);
+
+    const { cyberAudio } = await import("../../lib/audio");
+    cyberAudio.playHudBeep(440, 0.05);
+
+    const delay = Math.floor(Math.random() * 2500) + 1500; // 1.5s - 4s
+    timerRef.current = setTimeout(() => {
+      startTimeRef.current = performance.now();
+      setGameState("ready");
+      cyberAudio.playHudBeep(880, 0.1);
+    }, delay);
+  };
+
+  const handleClick = async () => {
+    const { cyberAudio } = await import("../../lib/audio");
+    cyberAudio.playSwitchClick();
+
+    if (gameState === "waiting") {
+      if (timerRef.current) clearTimeout(timerRef.current);
+      setGameState("early");
+      cyberAudio.playHudBeep(220, 0.2);
+    } else if (gameState === "ready") {
+      const elapsed = Math.round(performance.now() - startTimeRef.current);
+      setReactionTime(elapsed);
+      setGameState("finished");
+      if (elapsed < 160) {
+        cyberAudio.playHudBeep(1046, 0.15);
+      }
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, []);
+
+  return (
+    <div className="p-3 bg-obsidian-surface border border-wireframe-steel rounded space-y-2.5 my-1 font-mono text-xs">
+      <div className="flex items-center justify-between text-on-surface-variant text-[11px] pb-1 border-b border-wireframe-steel">
+        <span className="text-solar-amber font-bold flex items-center gap-1.5">
+          <span className="w-2 h-2 rounded-full bg-rog-crimson animate-ping"></span>
+          CS2 REFLEX BENCHMARK // SUB-TICK REACTION TEST
+        </span>
+        <span className="text-neon-cyan text-[10px]">TARGET: &lt;150MS</span>
+      </div>
+
+      <div
+        role="button"
+        tabIndex={0}
+        onClick={gameState === "waiting" || gameState === "ready" ? handleClick : undefined}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            if (gameState === "waiting" || gameState === "ready") handleClick();
+          }
+        }}
+        className={`w-full py-8 px-4 rounded border text-center cursor-pointer transition-all select-none ${
+          gameState === "idle"
+            ? "bg-obsidian-deep border-wireframe-steel text-on-surface hover:border-neon-cyan/50"
+            : gameState === "waiting"
+            ? "bg-rog-crimson/20 border-rog-crimson text-rog-crimson animate-pulse"
+            : gameState === "ready"
+            ? "bg-emerald-500/30 border-emerald-400 text-emerald-300 shadow-[0_0_20px_#00ff66]"
+            : gameState === "early"
+            ? "bg-rog-crimson/30 border-rog-crimson text-rog-crimson"
+            : "bg-surface-container border-neon-cyan/40 text-high-volt-white"
+        }`}
+      >
+        {gameState === "idle" && (
+          <div className="space-y-1">
+            <p className="text-high-volt-white font-bold">CLICK &quot;INITIALIZE&quot; TO BEGIN REFLEX TEST</p>
+            <p className="text-on-surface-variant text-[10px]">When display turns GREEN, click as fast as possible.</p>
+          </div>
+        )}
+
+        {gameState === "waiting" && (
+          <div className="space-y-1">
+            <p className="text-rog-crimson font-black text-sm tracking-widest">HOLD FIRE... WAIT FOR GREEN...</p>
+            <p className="text-on-surface-variant text-[10px]">Pre-firing will trigger a false-start penalty.</p>
+          </div>
+        )}
+
+        {gameState === "ready" && (
+          <div className="space-y-1">
+            <p className="text-emerald-300 font-black text-base tracking-widest animate-bounce">
+              ⚡ FIRE! CLICK NOW! ⚡
+            </p>
+            <p className="text-emerald-200 text-[10px]">SUB-TICK TIMING ACTIVE</p>
+          </div>
+        )}
+
+        {gameState === "early" && (
+          <div className="space-y-1">
+            <p className="text-rog-crimson font-bold">FALSE START! TRIGGER DISCIPLINE FAILED.</p>
+            <p className="text-on-surface-variant text-[10px]">You clicked before the target acquisition flash.</p>
+          </div>
+        )}
+
+        {gameState === "finished" && reactionTime !== null && (
+          <div className="space-y-1">
+            <p className="text-2xl font-black text-high-volt-white">
+              <span className={reactionTime < 160 ? "text-neon-cyan" : reactionTime < 220 ? "text-solar-amber" : "text-rog-crimson"}>
+                {reactionTime} ms
+              </span>
+            </p>
+            <p className="text-xs font-bold text-neon-cyan">
+              {reactionTime < 160
+                ? "⚡ S1MPLE TIER REFLEX! Elite sub-160ms reaction!"
+                : reactionTime < 200
+                ? "🎯 PRO FRAGGER REFLEX! Matches competitive CS2 benchmark."
+                : reactionTime < 250
+                ? "👍 SOLID ESPORTS SPEED. Good sub-tick awareness."
+                : "🐢 SLOW REFLEX. Warm up your fingers with Monkeytype!"}
+            </p>
+          </div>
+        )}
+      </div>
+
+      <div className="flex items-center justify-between pt-1">
+        <span className="text-[10px] text-on-surface-variant">
+          Benchmark: Sami Kalammallah CS2 reaction = &lt;150ms
+        </span>
+        {gameState !== "waiting" && gameState !== "ready" && (
+          <button
+            type="button"
+            onClick={startTest}
+            className="px-3 py-1 bg-neon-cyan text-obsidian-deep font-bold text-[11px] rounded hover:bg-white transition-all shadow-[0_0_10px_rgba(0,240,255,0.4)]"
+          >
+            {gameState === "idle" ? "INITIALIZE TEST" : "TRY AGAIN"}
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export function TacticalTerminal() {
   const [input, setInput] = useState("");
   const [history, setHistory] = useState<CommandOutput[]>([
@@ -45,6 +189,7 @@ export function TacticalTerminal() {
         response = (
           <div className="text-xs space-y-1 text-on-surface-variant">
             <p><span className="text-neon-cyan font-bold">whoami</span> — Display pilot identity and engineering profile</p>
+            <p><span className="text-neon-cyan font-bold">reaction</span> / <span className="text-neon-cyan font-bold">play</span> — Launch CS2 sub-tick reaction & reflex benchmark mini-game</p>
             <p><span className="text-neon-cyan font-bold">specs</span> — Hardware battlestation and peripheral telemetry</p>
             <p><span className="text-neon-cyan font-bold">games</span> — Competitive arena disciplines and records</p>
             <p><span className="text-neon-cyan font-bold">typing</span> — Monkeytype speed telemetry and mechanical stats</p>
@@ -53,6 +198,11 @@ export function TacticalTerminal() {
             <p><span className="text-neon-cyan font-bold">clear</span> — Purge tactical console buffer</p>
           </div>
         );
+        break;
+      case "reaction":
+      case "play":
+      case "game":
+        response = <ReactionGame />;
         break;
       case "whoami":
         response = (

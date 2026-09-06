@@ -4,6 +4,8 @@ import { Navigation } from "../src/components/sections/Navigation";
 import { FooterDiagnostics } from "../src/components/sections/FooterDiagnostics";
 import { AniMeMatrix } from "../src/components/hud/AniMeMatrix";
 import { TacticalTerminal } from "../src/components/terminal/TacticalTerminal";
+import { SkillTree } from "../src/components/sections/SkillTree";
+import { CrosshairCustomizer } from "../src/components/hud/CrosshairCustomizer";
 import { fetchGitHubActivity } from "../src/lib/github";
 import { fetchSteamProfile } from "../src/lib/steam";
 import { fetchMonkeytypeStats } from "../src/lib/monkeytype";
@@ -332,6 +334,9 @@ export default async function PortfolioPage() {
           </div>
         </section>
 
+        {/* [02.1] TALENT TREE // RPG SOFTWARE ENGINEERING LOADOUT */}
+        <SkillTree />
+
         {/* [03] ARENA & HARDCORE GAMING DISCIPLINE */}
         <section id="battlestation" className="w-full max-w-[88rem] mx-auto px-4 md:px-8 py-12 border-t border-wireframe-steel">
           <div className="flex items-center justify-between pb-6 mb-8 border-b border-wireframe-steel">
@@ -437,10 +442,13 @@ export default async function PortfolioPage() {
           </div>
 
           {/* Philosophy Banner */}
-          <div className="p-6 bg-obsidian-deep border-l-4 border-solar-amber border-y border-r border-wireframe-steel font-mono text-xs md:text-sm text-high-volt-white leading-relaxed">
+          <div className="p-6 bg-obsidian-deep border-l-4 border-solar-amber border-y border-r border-wireframe-steel font-mono text-xs md:text-sm text-high-volt-white leading-relaxed mb-8">
             <span className="text-solar-amber font-bold block mb-1">// DUAL DISCIPLINE PHILOSOPHY [AGE 31 • ALIVE SINCE &apos;95]</span>
             &ldquo;Five years of architecting scalable software taught me system resilience; competitive Dota 2 and CS2 lobbies taught me rapid execution under fire. Precision in code, dominance in the arena.&rdquo;
           </div>
+
+          {/* Crosshair Customizer & Live Target Practice */}
+          <CrosshairCustomizer />
         </section>
 
         {/* [04] RIG SPECS // BATTLESTATION */}
