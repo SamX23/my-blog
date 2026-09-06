@@ -1,15 +1,14 @@
 "use client";
 
-// Web Audio API Synthesizer for Mechanical Keyboard and Cyber Tactical SFX
+// Web Audio API Synthesizer for Tactile Mechanical Keyboard and Tactical SFX
 // Zero external sound assets needed - 100% lightweight & instantaneous
 
 class CyberAudioManager {
   private ctx: AudioContext | null = null;
-  private isEnabled: boolean = false;
-  private switchType: "rengoku" | "tactile" = "rengoku";
+  private isEnabled: boolean = true; // Sound enabled by default
 
   constructor() {
-    // AudioContext will be initialized on first user interaction to comply with browser autoplay policy
+    // AudioContext will resume on first user interaction to comply with browser autoplay policy
   }
 
   private initCtx() {
@@ -37,15 +36,7 @@ class CyberAudioManager {
     return this.isEnabled;
   }
 
-  public setSwitch(type: "rengoku" | "tactile") {
-    this.switchType = type;
-  }
-
-  public getSwitch(): "rengoku" | "tactile" {
-    return this.switchType;
-  }
-
-  // Thocky mechanical switch sound (Rengoku Flame Edition / Linear switch)
+  // Crisp tactile mechanical click sound (Fantech / mechanical tactile switch)
   public playSwitchClick() {
     if (!this.isEnabled) return;
     this.initCtx();
@@ -55,29 +46,18 @@ class CyberAudioManager {
     const osc = this.ctx.createOscillator();
     const gain = this.ctx.createGain();
 
-    if (this.switchType === "rengoku") {
-      // Deep "thock" sound: low pitch drop with fast noise burst
-      osc.type = "sine";
-      osc.frequency.setValueAtTime(140 + Math.random() * 20, now);
-      osc.frequency.exponentialRampToValueAtTime(45, now + 0.04);
+    osc.type = "triangle";
+    osc.frequency.setValueAtTime(680 + Math.random() * 60, now);
+    osc.frequency.exponentialRampToValueAtTime(110, now + 0.028);
 
-      gain.gain.setValueAtTime(0.18, now);
-      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.04);
-    } else {
-      // Crisp tactile mechanical click (Fantech Maxfit 61 clicky switch)
-      osc.type = "triangle";
-      osc.frequency.setValueAtTime(650 + Math.random() * 80, now);
-      osc.frequency.exponentialRampToValueAtTime(120, now + 0.03);
-
-      gain.gain.setValueAtTime(0.12, now);
-      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.03);
-    }
+    gain.gain.setValueAtTime(0.14, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.028);
 
     osc.connect(gain);
     gain.connect(this.ctx.destination);
 
     osc.start(now);
-    osc.stop(now + 0.05);
+    osc.stop(now + 0.035);
   }
 
   // Tactical HUD beep (for target lock, mode switch, or success)

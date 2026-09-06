@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useAuraTheme } from "../../lib/themeContext";
 
 export function Navigation() {
-  const { theme, setTheme, audioEnabled, toggleAudio, switchProfile, setSwitchProfile } = useAuraTheme();
+  const { audioEnabled, toggleAudio } = useAuraTheme();
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-obsidian-deep/90 backdrop-blur-md border-b border-neon-cyan/20 shadow-[0_4px_24px_rgba(0,240,255,0.06)]">
@@ -44,68 +44,22 @@ export function Navigation() {
           </a>
         </nav>
 
-        {/* Tactical Controls: Overclock Aura Theme + Mech SFX Toggle + Profile */}
+        {/* Tactical Controls: SFX Toggle + GitHub + Profile */}
         <div className="flex items-center gap-3">
-          {/* Overclock Aura Mode Switcher (Cyan, Flame, Toxic) */}
-          <div className="flex items-center p-0.5 bg-obsidian-surface border border-wireframe-steel rounded font-mono text-[10px]">
-            <button
-              type="button"
-              onClick={() => setTheme("cyan")}
-              className={`px-2 py-0.5 rounded transition-all ${
-                theme === "cyan" ? "bg-neon-cyan/20 text-neon-cyan font-bold border border-neon-cyan/40" : "text-tactical-slate hover:text-on-surface"
-              }`}
-              title="Aura Preset: Cyberspace Cyan"
-            >
-              CYAN
-            </button>
-            <button
-              type="button"
-              onClick={() => setTheme("flame")}
-              className={`px-2 py-0.5 rounded transition-all ${
-                theme === "flame" ? "bg-solar-amber/20 text-solar-amber font-bold border border-solar-amber/40" : "text-tactical-slate hover:text-on-surface"
-              }`}
-              title="Aura Preset: Rengoku Solar Flame"
-            >
-              FLAME
-            </button>
-            <button
-              type="button"
-              onClick={() => setTheme("toxic")}
-              className={`px-2 py-0.5 rounded transition-all ${
-                theme === "toxic" ? "bg-emerald-500/20 text-emerald-400 font-bold border border-emerald-500/40" : "text-tactical-slate hover:text-on-surface"
-              }`}
-              title="Aura Preset: CS2 Toxic Green"
-            >
-              TOXIC
-            </button>
-          </div>
-
-          {/* Mechanical Keyboard Sound Toggle */}
+          {/* Mechanical Keyboard Tactile Sound Toggle */}
           <button
             type="button"
             onClick={toggleAudio}
-            className={`px-2 py-1 rounded font-mono text-[10px] border transition-all flex items-center gap-1.5 ${
+            className={`px-2.5 py-1 rounded font-mono text-[10px] border transition-all flex items-center gap-1.5 ${
               audioEnabled
                 ? "bg-neon-cyan/15 border-neon-cyan text-neon-cyan shadow-[0_0_10px_rgba(0,240,255,0.3)]"
                 : "border-wireframe-steel text-tactical-slate hover:text-on-surface"
             }`}
-            title="Toggle interactive mechanical switch sound effects"
+            title="Toggle tactile keyboard click sound effects"
           >
             <span>{audioEnabled ? "🔊" : "🔇"}</span>
-            <span className="hidden sm:inline">{audioEnabled ? "SFX ON" : "SFX"}</span>
+            <span className="hidden sm:inline">{audioEnabled ? "SFX ON" : "SFX MUTE"}</span>
           </button>
-
-          {/* Switch sound profile toggle when sound is enabled */}
-          {audioEnabled && (
-            <button
-              type="button"
-              onClick={() => setSwitchProfile(switchProfile === "rengoku" ? "tactile" : "rengoku")}
-              className="hidden lg:inline-flex px-1.5 py-1 rounded font-mono text-[9px] border border-solar-amber/40 text-solar-amber bg-solar-amber/10"
-              title="Switch between Rengoku Linear and Tactile Switch SFX"
-            >
-              {switchProfile === "rengoku" ? "RENGOKU THOCK" : "TACTILE CLICK"}
-            </button>
-          )}
 
           {/* GitHub CTA */}
           <a

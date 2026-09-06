@@ -13,8 +13,6 @@ interface ThemeContextType {
   setCrosshairSize: (s: "small" | "medium" | "large") => void;
   audioEnabled: boolean;
   toggleAudio: () => void;
-  switchProfile: "rengoku" | "tactile";
-  setSwitchProfile: (p: "rengoku" | "tactile") => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | null>(null);
@@ -23,8 +21,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<AuraTheme>("cyan");
   const [crosshairColor, setCrosshairColor] = useState<string>("#00f0ff");
   const [crosshairSize, setCrosshairSize] = useState<"small" | "medium" | "large">("medium");
-  const [audioEnabled, setAudioEnabled] = useState(false);
-  const [switchProfile, setSwitchProfileState] = useState<"rengoku" | "tactile">("rengoku");
+  const [audioEnabled, setAudioEnabled] = useState(true); // Default ON
 
   const setTheme = (newTheme: AuraTheme) => {
     setThemeState(newTheme);
@@ -40,12 +37,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const { cyberAudio } = await import("./audio");
     const newState = cyberAudio.toggleAudio();
     setAudioEnabled(newState);
-  };
-
-  const setSwitchProfile = async (p: "rengoku" | "tactile") => {
-    setSwitchProfileState(p);
-    const { cyberAudio } = await import("./audio");
-    cyberAudio.setSwitch(p);
   };
 
   useEffect(() => {
@@ -72,8 +63,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         setCrosshairSize,
         audioEnabled,
         toggleAudio,
-        switchProfile,
-        setSwitchProfile,
       }}
     >
       {children}

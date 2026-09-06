@@ -48,7 +48,7 @@ const ROG_EYE = [
 type MatrixMode = "sami" | "audio" | "flame" | "matrix" | "draw";
 
 export function AniMeMatrix() {
-  const { theme } = useAuraTheme();
+  const { theme, setTheme } = useAuraTheme();
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [mode, setMode] = useState<MatrixMode>("sami");
   const [isDrawing, setIsDrawing] = useState(false);
@@ -256,60 +256,113 @@ export function AniMeMatrix() {
     return () => cancelAnimationFrame(animFrame);
   }, [mode, buildSamiGrid, theme]);
 
+  const auraBorderClass =
+    theme === "cyan"
+      ? "border-neon-cyan/50 shadow-[0_0_24px_rgba(0,240,255,0.25)]"
+      : theme === "flame"
+      ? "border-solar-amber/50 shadow-[0_0_24px_rgba(255,119,0,0.25)]"
+      : "border-emerald-400/50 shadow-[0_0_24px_rgba(0,255,102,0.25)]";
+
   return (
-    <div className="flex flex-col items-end gap-1.5 font-mono select-none">
+    <div className="flex flex-col items-end gap-2 font-mono select-none">
+      {/* Matrix Subsystem Header & Combined Controls */}
       <div className="flex flex-wrap items-center justify-between w-full gap-2 text-[10px] text-on-surface-variant tracking-wider">
         <span className="text-solar-amber font-bold">[ AniMe Matrix // PANORAMIC ROG LED ]</span>
-        <div className="flex items-center gap-1 bg-obsidian-deep p-0.5 rounded border border-wireframe-steel text-[9px]">
-          <button
-            type="button"
-            onClick={() => setMode("sami")}
-            className={`px-2 py-0.5 rounded transition-all ${
-              mode === "sami" ? "bg-neon-cyan/20 text-neon-cyan font-bold border border-neon-cyan/40" : "text-tactical-slate hover:text-on-surface"
-            }`}
-          >
-            SAMI
-          </button>
-          <button
-            type="button"
-            onClick={() => setMode("audio")}
-            className={`px-2 py-0.5 rounded transition-all ${
-              mode === "audio" ? "bg-rog-crimson/20 text-rog-crimson font-bold border border-rog-crimson/40" : "text-tactical-slate hover:text-on-surface"
-            }`}
-          >
-            AUDIO
-          </button>
-          <button
-            type="button"
-            onClick={() => setMode("flame")}
-            className={`px-2 py-0.5 rounded transition-all ${
-              mode === "flame" ? "bg-solar-amber/20 text-solar-amber font-bold border border-solar-amber/40" : "text-tactical-slate hover:text-on-surface"
-            }`}
-          >
-            FLAME 🔥
-          </button>
-          <button
-            type="button"
-            onClick={() => setMode("matrix")}
-            className={`px-2 py-0.5 rounded transition-all ${
-              mode === "matrix" ? "bg-neon-cyan/20 text-neon-cyan font-bold border border-neon-cyan/40" : "text-tactical-slate hover:text-on-surface"
-            }`}
-          >
-            RAIN
-          </button>
-          <button
-            type="button"
-            onClick={() => setMode("draw")}
-            className={`px-2 py-0.5 rounded transition-all ${
-              mode === "draw" ? "bg-neon-cyan text-obsidian-deep font-bold" : "text-tactical-slate hover:text-on-surface"
-            }`}
-          >
-            DRAW ✎
-          </button>
+
+        <div className="flex flex-wrap items-center gap-2">
+          {/* Aura Sync LED Theme Selector */}
+          <div className="flex items-center gap-0.5 bg-obsidian-deep p-0.5 rounded border border-wireframe-steel text-[9px]">
+            <span className="text-tactical-slate px-1 text-[8px] font-bold">AURA:</span>
+            <button
+              type="button"
+              onClick={() => setTheme("cyan")}
+              className={`px-1.5 py-0.5 rounded transition-all ${
+                theme === "cyan"
+                  ? "bg-neon-cyan/20 text-neon-cyan font-bold border border-neon-cyan/40 shadow-[0_0_8px_#00f0ff]"
+                  : "text-tactical-slate hover:text-on-surface"
+              }`}
+              title="Aura Sync: Cyberspace Cyan LED"
+            >
+              CYAN
+            </button>
+            <button
+              type="button"
+              onClick={() => setTheme("flame")}
+              className={`px-1.5 py-0.5 rounded transition-all ${
+                theme === "flame"
+                  ? "bg-solar-amber/20 text-solar-amber font-bold border border-solar-amber/40 shadow-[0_0_8px_#ff7700]"
+                  : "text-tactical-slate hover:text-on-surface"
+              }`}
+              title="Aura Sync: Rengoku Solar Flame LED"
+            >
+              FLAME
+            </button>
+            <button
+              type="button"
+              onClick={() => setTheme("toxic")}
+              className={`px-1.5 py-0.5 rounded transition-all ${
+                theme === "toxic"
+                  ? "bg-emerald-500/20 text-emerald-400 font-bold border border-emerald-500/40 shadow-[0_0_8px_#00ff66]"
+                  : "text-tactical-slate hover:text-on-surface"
+              }`}
+              title="Aura Sync: CS2 Toxic Green LED"
+            >
+              TOXIC
+            </button>
+          </div>
+
+          {/* Matrix Animation Mode Buttons */}
+          <div className="flex items-center gap-1 bg-obsidian-deep p-0.5 rounded border border-wireframe-steel text-[9px]">
+            <button
+              type="button"
+              onClick={() => setMode("sami")}
+              className={`px-2 py-0.5 rounded transition-all ${
+                mode === "sami" ? "bg-neon-cyan/20 text-neon-cyan font-bold border border-neon-cyan/40" : "text-tactical-slate hover:text-on-surface"
+              }`}
+            >
+              SAMI
+            </button>
+            <button
+              type="button"
+              onClick={() => setMode("audio")}
+              className={`px-2 py-0.5 rounded transition-all ${
+                mode === "audio" ? "bg-rog-crimson/20 text-rog-crimson font-bold border border-rog-crimson/40" : "text-tactical-slate hover:text-on-surface"
+              }`}
+            >
+              AUDIO
+            </button>
+            <button
+              type="button"
+              onClick={() => setMode("flame")}
+              className={`px-2 py-0.5 rounded transition-all ${
+                mode === "flame" ? "bg-solar-amber/20 text-solar-amber font-bold border border-solar-amber/40" : "text-tactical-slate hover:text-on-surface"
+              }`}
+            >
+              FLAME 🔥
+            </button>
+            <button
+              type="button"
+              onClick={() => setMode("matrix")}
+              className={`px-2 py-0.5 rounded transition-all ${
+                mode === "matrix" ? "bg-neon-cyan/20 text-neon-cyan font-bold border border-neon-cyan/40" : "text-tactical-slate hover:text-on-surface"
+              }`}
+            >
+              RAIN
+            </button>
+            <button
+              type="button"
+              onClick={() => setMode("draw")}
+              className={`px-2 py-0.5 rounded transition-all ${
+                mode === "draw" ? "bg-neon-cyan text-obsidian-deep font-bold" : "text-tactical-slate hover:text-on-surface"
+              }`}
+            >
+              DRAW ✎
+            </button>
+          </div>
         </div>
       </div>
 
-      <div className="relative p-2.5 rounded border border-neon-cyan/40 bg-obsidian-deep/95 shadow-[0_0_24px_rgba(0,240,255,0.2)] max-w-full overflow-x-auto">
+      <div className={`relative p-2.5 rounded border bg-obsidian-deep/95 max-w-full overflow-x-auto transition-all duration-300 ${auraBorderClass}`}>
         <canvas
           ref={canvasRef}
           onPointerDown={handlePointerDown}
