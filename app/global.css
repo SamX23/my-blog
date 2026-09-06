@@ -1,18 +1,39 @@
-@keyframes animate {
-  0% {
-    opacity: 1;
-    top: "29%";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #0b0c10;
+    color: #e3e2e8;
+    font-family: var(--font-space), sans-serif;
   }
-  15% {
-    opacity: 1;
-    top: "60%";
-  }
-  50% {
-    opacity: 0;
-    top: "60%";
-  }
-  100% {
-    opacity: 0;
-    top: "29%";
-  }
+}
+
+/* 45 degree chamfers */
+.chamfer-btn {
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+
+.chamfer-card {
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+}
+
+.chamfer-badge {
+  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+}
+
+/* Glowing effects */
+.glow-cyan {
+  box-shadow: 0 0 14px rgba(0, 240, 255, 0.35), inset 0 0 4px rgba(0, 240, 255, 0.15);
+}
+
+.glow-crimson {
+  box-shadow: 0 0 14px rgba(255, 0, 85, 0.4), inset 0 0 4px rgba(255, 0, 85, 0.2);
+}
+
+.glow-amber {
+  box-shadow: 0 0 14px rgba(255, 119, 0, 0.45), inset 0 0 5px rgba(255, 119, 0, 0.25);
 }

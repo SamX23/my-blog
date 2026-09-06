@@ -1,12 +1,6 @@
-module.exports = {
-  images: {
-    dangerouslyAllowSVG: true,
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "github-readme-stats.vercel.app",
-        pathname: "/**",
-      },
-    ],
-  },
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
 };
+
+module.exports = nextConfig;

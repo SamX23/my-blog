@@ -1,38 +1,35 @@
-import CssBaseline from "@mui/material/CssBaseline";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
-import { ThemeProvider } from "../src/providers/themeProvider";
-
+import type { Metadata } from "next";
+import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./global.css";
 
-export async function generateMetadata() {
-  return {
-    title: "Home",
-    description: "Sami Kalammallah blog about his front end journey",
-    twitter: {
-      card: "summary_large_image",
-    },
-    openGraph: {
-      type: "website",
-      description: "Sami Kalammallah blog about his front end journey",
-      images: [
-        {
-          url: `https://og-image.vercel.app/${encodeURI(
-            "Sami Kalammallah"
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`,
-          width: 800,
-          height: 600,
-          alt: "Sami Kalammallah",
-        },
-      ],
-    },
-    icons: {
-      icon: "icon.svg",
-    },
-    other: {
-      "google-site-verification": "nWaKNPg87UzU3zONVNwXr_dzHzBfS35RS-hceGJaxJk",
-    },
-  };
-}
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: "SAMI KALAMMALLAH // 7+ YRS SOFT_ENG & HARDCORE PC GAMER",
+  description:
+    "Senior Software Engineer specializing in scalable web systems, cross-platform apps, GraphQL, and high-concurrency architectures. Hardcore PC gamer across Dota 2 and CS2.",
+  openGraph: {
+    title: "Sami Kalammallah - Cyberpunk ROG Developer Portfolio",
+    description: "7+ Years Software Engineering & Hardcore PC Gaming Discipline",
+    url: "https://kalammallah.vercel.app",
+    siteName: "Sami Kalammallah Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
+};
 
 export default function RootLayout({
   children,
@@ -40,14 +37,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
-        <AppRouterCacheProvider>
-          <ThemeProvider>
-            <CssBaseline />
-            {children}
-          </ThemeProvider>
-        </AppRouterCacheProvider>
+    <html lang="en" className={`dark ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
+      <body className="bg-obsidian-deep text-on-surface antialiased">
+        {children}
       </body>
     </html>
   );
