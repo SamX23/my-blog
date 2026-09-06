@@ -47,6 +47,7 @@ export function TacticalTerminal() {
             <p><span className="text-neon-cyan font-bold">whoami</span> — Display pilot identity and engineering profile</p>
             <p><span className="text-neon-cyan font-bold">specs</span> — Hardware battlestation and peripheral telemetry</p>
             <p><span className="text-neon-cyan font-bold">games</span> — Competitive arena disciplines and records</p>
+            <p><span className="text-neon-cyan font-bold">typing</span> — Monkeytype speed telemetry and mechanical stats</p>
             <p><span className="text-neon-cyan font-bold">age</span> — Telemetry origin cycle</p>
             <p><span className="text-neon-cyan font-bold">socials</span> — Direct uplink transmission channels</p>
             <p><span className="text-neon-cyan font-bold">clear</span> — Purge tactical console buffer</p>
@@ -79,6 +80,16 @@ export function TacticalTerminal() {
             <p>🎯 <span className="text-solar-amber font-bold">Counter-Strike 2:</span> Entry Fragger & Rifler (&lt;150ms Reaction)</p>
             <p>🌆 <span className="text-neon-cyan font-bold">Cyberpunk 2077:</span> Full Ray Tracing Overdrive</p>
             <p>🗡️ <span className="text-solar-amber font-bold">Elden Ring:</span> Frame-perfect boss dodges</p>
+          </div>
+        );
+        break;
+      case "typing":
+      case "monkeytype":
+        response = (
+          <div className="space-y-0.5 text-xs text-on-surface">
+            <p>⚡ <span className="text-neon-cyan font-bold">MONKEYTYPE PROFILE:</span> <a href="https://monkeytype.com/profile/samx23" target="_blank" rel="noreferrer" className="underline">monkeytype.com/profile/samx23</a></p>
+            <p>🔥 <span className="text-solar-amber font-bold">KEYBOARD:</span> Pressplay Essential75 (Rengoku Flame Edition)</p>
+            <p>🎯 <span className="text-high-volt-white font-bold">SPEED:</span> 108+ WPM // Accuracy: 98% // Consistency: 84%</p>
           </div>
         );
         break;

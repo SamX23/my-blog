@@ -1,16 +1,19 @@
 import React from "react";
+import Image from "next/image";
 import { Navigation } from "../src/components/sections/Navigation";
 import { FooterDiagnostics } from "../src/components/sections/FooterDiagnostics";
 import { AniMeMatrix } from "../src/components/hud/AniMeMatrix";
 import { TacticalTerminal } from "../src/components/terminal/TacticalTerminal";
 import { fetchGitHubActivity } from "../src/lib/github";
 import { fetchSteamProfile } from "../src/lib/steam";
+import { fetchMonkeytypeStats } from "../src/lib/monkeytype";
 
 export const revalidate = 3600;
 
 export default async function PortfolioPage() {
   const githubData = await fetchGitHubActivity("SamX23");
   const steamData = await fetchSteamProfile();
+  const monkeytypeData = await fetchMonkeytypeStats();
 
   return (
     <div className="min-h-screen bg-obsidian-deep text-on-surface font-sans selection:bg-neon-cyan selection:text-obsidian-deep relative overflow-x-hidden pb-16">
@@ -41,21 +44,34 @@ export default async function PortfolioPage() {
         {/* [01] TERMINAL HERO */}
         <section id="terminal-hero" className="w-full max-w-[88rem] mx-auto px-4 md:px-8 py-10 md:py-16">
           {/* Top Telemetry strip */}
-          <div className="flex flex-wrap items-start justify-between gap-4 pb-6 border-b border-wireframe-steel mb-8">
-            <div>
-              <div className="flex items-center gap-2 font-mono text-xs text-neon-cyan mb-2">
-                <span>PROTOCOL_ENGAGED // SAMI KALAMMALLAH [SamX23]</span>
+          <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-wireframe-steel mb-8">
+            <div className="flex items-center gap-4">
+              <div className="relative flex items-center justify-center p-1 rounded border border-neon-cyan/40 bg-surface-container shadow-[0_0_16px_rgba(0,240,255,0.25)]">
+                <Image
+                  src="/images/profile.jpg"
+                  alt="Sami Kalammallah"
+                  width={56}
+                  height={56}
+                  className="rounded object-cover w-14 h-14"
+                  unoptimized
+                />
+                <span className="absolute -bottom-1 -right-1 w-3 h-3 rounded-full bg-solar-amber ring-2 ring-obsidian-deep animate-pulse shadow-[0_0_8px_#ff7700]"></span>
               </div>
-              <div className="flex items-center gap-2 font-mono text-xs">
-                <span className="text-solar-amber bg-solar-amber/10 px-2 py-0.5 border border-solar-amber/30">
-                  5+ YEARS PRODUCTION SOFTWARE
-                </span>
-                <span className="text-rog-crimson bg-rog-crimson/10 px-2 py-0.5 border border-rog-crimson/30">
-                  ELITE PC GAMER
-                </span>
-                <span className="text-neon-cyan bg-neon-cyan/10 px-2 py-0.5 border border-neon-cyan/30">
-                  ORIGIN: 1995 (31 YRS)
-                </span>
+              <div>
+                <div className="flex items-center gap-2 font-mono text-xs text-neon-cyan mb-1.5">
+                  <span>PROTOCOL_ENGAGED // SAMI KALAMMALLAH [SamX23]</span>
+                </div>
+                <div className="flex flex-wrap items-center gap-2 font-mono text-xs">
+                  <span className="text-solar-amber bg-solar-amber/10 px-2 py-0.5 border border-solar-amber/30">
+                    5+ YEARS PRODUCTION SOFTWARE
+                  </span>
+                  <span className="text-rog-crimson bg-rog-crimson/10 px-2 py-0.5 border border-rog-crimson/30">
+                    ELITE PC GAMER
+                  </span>
+                  <span className="text-neon-cyan bg-neon-cyan/10 px-2 py-0.5 border border-neon-cyan/30">
+                    ORIGIN: 1995 (31 YRS)
+                  </span>
+                </div>
               </div>
             </div>
             <AniMeMatrix />
@@ -331,13 +347,13 @@ export default async function PortfolioPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {/* Dota 2 Card */}
             <div className="bg-obsidian-surface border border-rog-crimson/30 p-5 rounded relative chamfer-card">
               <div className="flex items-center justify-between font-mono text-xs pb-3 border-b border-wireframe-steel">
                 <span className="text-rog-crimson font-bold">TACTICAL TITLE // 01: DOTA 2</span>
                 <span className="text-solar-amber bg-solar-amber/10 px-2 py-0.5 border border-solar-amber/30 text-[10px]">
-                  POS 1 / CARRY SPECIALIST
+                  POS 1 / CARRY
                 </span>
               </div>
               <div className="grid grid-cols-3 gap-3 py-4 font-mono text-xs">
@@ -346,43 +362,76 @@ export default async function PortfolioPage() {
                   <span className="text-high-volt-white font-bold text-lg">285+ APM</span>
                 </div>
                 <div>
-                  <span className="text-on-surface-variant text-[10px] block">ROLE PREFERENCE</span>
-                  <span className="text-neon-cyan font-bold text-base">Pos 1 / Mid</span>
+                  <span className="text-on-surface-variant text-[10px] block">ROLE PREF</span>
+                  <span className="text-neon-cyan font-bold text-base">Carry / Mid</span>
                 </div>
                 <div>
-                  <span className="text-on-surface-variant text-[10px] block">TEAM SYNERGY</span>
-                  <span className="text-solar-amber font-bold text-base">Teamfight Lead</span>
+                  <span className="text-on-surface-variant text-[10px] block">SYNERGY</span>
+                  <span className="text-solar-amber font-bold text-base">Teamfight</span>
                 </div>
               </div>
               <p className="text-xs text-on-surface-variant font-mono">
-                Micro-efficiency, tactical positioning under extreme tempo, itemization drafting, and high-concurrency decision-making.
+                Micro-efficiency, tactical positioning under tempo, drafting, and high-concurrency execution.
               </p>
             </div>
 
             {/* CS2 Card */}
             <div className="bg-obsidian-surface border border-solar-amber/30 p-5 rounded relative chamfer-card">
               <div className="flex items-center justify-between font-mono text-xs pb-3 border-b border-wireframe-steel">
-                <span className="text-solar-amber font-bold">TACTICAL TITLE // 02: COUNTER-STRIKE 2</span>
+                <span className="text-solar-amber font-bold">TACTICAL TITLE // 02: CS2</span>
                 <span className="text-neon-cyan bg-neon-cyan/10 px-2 py-0.5 border border-neon-cyan/30 text-[10px]">
                   ENTRY &amp; RIFLE
                 </span>
               </div>
               <div className="grid grid-cols-3 gap-3 py-4 font-mono text-xs">
                 <div>
-                  <span className="text-on-surface-variant text-[10px] block">HEADSHOT ACCURACY</span>
+                  <span className="text-on-surface-variant text-[10px] block">HEADSHOT</span>
                   <span className="text-high-volt-white font-bold text-lg">64.8%</span>
                 </div>
                 <div>
-                  <span className="text-on-surface-variant text-[10px] block">REACTION TIME</span>
+                  <span className="text-on-surface-variant text-[10px] block">REACTION</span>
                   <span className="text-rog-crimson font-bold text-base">&lt;150ms</span>
                 </div>
                 <div>
-                  <span className="text-on-surface-variant text-[10px] block">TACTICAL UTILITY</span>
-                  <span className="text-neon-cyan font-bold text-base">Deep Lineups</span>
+                  <span className="text-on-surface-variant text-[10px] block">UTILITY</span>
+                  <span className="text-neon-cyan font-bold text-base">Lineups</span>
                 </div>
               </div>
               <p className="text-xs text-on-surface-variant font-mono">
-                Sub-tick counter-strafing, first-bullet headshot precision, crosshair discipline, and calm execution during high-stakes clutches.
+                Sub-tick counter-strafing, first-bullet headshot precision, and crosshair clutch discipline.
+              </p>
+            </div>
+
+            {/* Monkeytype Speed Discipline Card */}
+            <div className="bg-obsidian-surface border border-neon-cyan/40 p-5 rounded relative chamfer-card shadow-[0_0_12px_rgba(0,240,255,0.08)]">
+              <div className="flex items-center justify-between font-mono text-xs pb-3 border-b border-wireframe-steel">
+                <span className="text-neon-cyan font-bold">TACTICAL TITLE // 03: MONKEYTYPE</span>
+                <a
+                  href={monkeytypeData.profileUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-solar-amber bg-solar-amber/10 px-2 py-0.5 border border-solar-amber/30 text-[10px] hover:bg-solar-amber/20 transition-colors"
+                >
+                  SPEED: {monkeytypeData.wpm} WPM ↗
+                </a>
+              </div>
+              <div className="grid grid-cols-3 gap-3 py-4 font-mono text-xs">
+                <div>
+                  <span className="text-on-surface-variant text-[10px] block">PEAK SPEED</span>
+                  <span className="text-neon-cyan font-bold text-lg">{monkeytypeData.wpm} WPM</span>
+                </div>
+                <div>
+                  <span className="text-on-surface-variant text-[10px] block">ACCURACY</span>
+                  <span className="text-high-volt-white font-bold text-base">{monkeytypeData.accuracy}%</span>
+                </div>
+                <div>
+                  <span className="text-on-surface-variant text-[10px] block">CONSISTENCY</span>
+                  <span className="text-solar-amber font-bold text-base">{monkeytypeData.consistency}%</span>
+                </div>
+              </div>
+              <p className="text-xs text-on-surface-variant font-mono flex items-center justify-between">
+                <span>Rengoku Flame Keycaps</span>
+                <span className="text-neon-cyan font-bold">{monkeytypeData.testsCompleted}+ Tests</span>
               </p>
             </div>
           </div>
@@ -534,7 +583,7 @@ export default async function PortfolioPage() {
               </div>
 
               {/* Social Channels grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-xs">
+              <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 font-mono text-xs">
                 <a
                   href="https://github.com/SamX23"
                   target="_blank"
@@ -563,12 +612,21 @@ export default async function PortfolioPage() {
                   <span className="text-solar-amber font-bold">Steam</span>
                 </a>
                 <a
+                  href="https://monkeytype.com/profile/samx23"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 bg-obsidian-deep border border-wireframe-steel hover:border-neon-cyan transition-all text-center"
+                >
+                  <span className="text-[10px] text-on-surface-variant block">NODE_04</span>
+                  <span className="text-neon-cyan font-bold">Monkeytype</span>
+                </a>
+                <a
                   href="https://kalammallah.vercel.app"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2.5 bg-obsidian-deep border border-wireframe-steel hover:border-rog-crimson transition-all text-center"
                 >
-                  <span className="text-[10px] text-on-surface-variant block">NODE_04</span>
+                  <span className="text-[10px] text-on-surface-variant block">NODE_05</span>
                   <span className="text-rog-crimson font-bold">Domain</span>
                 </a>
               </div>
